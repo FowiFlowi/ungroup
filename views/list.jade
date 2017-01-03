@@ -1,0 +1,22 @@
+extends layout
+block content
+	table(class='table table-bordered table-hover')
+		thead 
+			tr
+				th №
+				th Имя
+				th Фамилия
+				th VK
+		tbody
+			each student in list
+				tr
+					- if (student.num == 16)
+						td #{student.num} 
+							i(class='glyphicon glyphicon-heart')
+					- else
+						td #{student.num}
+					td #{student.name}
+					td #{student.surname}
+					td: a(href='#{student.vkref}')
+							button(class='btn btn-success'): i(class='glyphicon glyphicon-user')
+
