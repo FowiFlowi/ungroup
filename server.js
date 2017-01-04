@@ -4,8 +4,9 @@ let http = require('http'),
 	server = http.createServer(app),
 	io = require('socket.io').listen(server),
 	middleware = require('./middleware')(app, express, io),
-	config = require('./config');
+	config = require('./config'),
+	logger = require('./utils/log')(module);
 
 server.listen(config.get('port'), () => {
-	console.log('Express server is listening on port ' + config.get('port'));
+	logger.info('Express server is listening on port ' + config.get('port'));
 });
