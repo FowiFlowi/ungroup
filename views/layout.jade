@@ -3,7 +3,6 @@ html
 	title= page
 	head
 		link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
-		
 		link(rel="shortcut icon" href="kv.ico")
 		script(src='/socket.io/socket.io.js')
 	style.
@@ -27,14 +26,16 @@ html
 			font: 130% "Helvetica Neue","Open Sans",sans-serif;
 			color:#BBBBBB;
 			position:relative;
-			//- padding-right:30px;
+			//padding-right:30px;
 			padding-bottom:5px;
 		}
-		.Menu
+		#head
 			{
+				//position:fixed;
 				background-color:#ffffff;
 				margin-top:24px;
-				
+				width:100%;
+				//margin-bottom:60%;
 			}
 			.Menu a::before
 			{
@@ -80,15 +81,15 @@ html
 		{
 			width:50%;
 		}
-
-			
+		
 
 body
 	center
-		div.Menu
-			ul
-				li: a(href='/home'): i(class='glyphicon glyphicon-home')  Home
-				li: a(href='/list'): i(class='glyphicon glyphicon-list')  List
-				li: a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
+		div(id="head")
+			div.Menu
+				ul
+					li: a(href='/home'): i(class='glyphicon glyphicon-home')  Home
+					li: a(href='/list'): i(class='glyphicon glyphicon-list')  List
+					li: a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
 
 	block content
