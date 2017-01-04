@@ -7,12 +7,12 @@ module.exports = function (app, express, io) {
 		favicon = require('serve-favicon');
 
 
-	app.disable('x-powered-by');								// off the waste http-head
+	app.disable('x-powered-by');									// off the waste http-head
 
 	app.set('views', path.join(__dirname,'..', 'views'))
-	app.set('views engine', 'jade');							// Page Rendering
+	app.set('views engine', 'jade');								// Page Rendering
 
-	app.use(favicon('public/images/favicon.ico')); 				// Favicon
+	app.use(favicon('public/images/favicon.ico')); 					// Favicon
 
 	app.use(express.static(path.join(__dirname, '..', 'public')));	// Public directory
 
