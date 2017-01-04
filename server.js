@@ -2,7 +2,8 @@ let http = require('http'),
 	express = require('express'),
 	app = express(),
 	server = http.createServer(app),
-	middleware = require('./middleware')(app, express, server),
+	io = require('socket.io').listen(server),
+	middleware = require('./middleware')(app, express, io),
 	config = require('./config');
 
 server.listen(config.get('port'), () => {

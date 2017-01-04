@@ -2,7 +2,7 @@
 // 	authentication = require('./authentication'),
 // 	error = require('./error');
 
-module.exports = function (app, server) {
+module.exports = function (app, io) {
 	app.get('/', (req, res) => {
 		res.redirect('/home');
 	});
@@ -20,7 +20,7 @@ module.exports = function (app, server) {
 	});
 
 	app.get('/chat', (req, res) => {
-		let io = require('./io')(server);
+		let sio = require('./io')(io);
 		res.render('chat.jade', {page: 'Chat'});
 	});
 

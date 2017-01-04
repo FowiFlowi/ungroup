@@ -1,4 +1,4 @@
-module.exports = function (app, express, server) {
+module.exports = function (app, express, io) {
 	let path = require('path'),
 		mongoose = require('mongoose'),
 		router = require('../routes'),
@@ -16,7 +16,7 @@ module.exports = function (app, express, server) {
 
 	app.use(express.static(path.join(__dirname, '..', 'public')));	// Public directory
 
-	router(app, server);
+	router(app, io);
 
 	// // Logger
 	// if (app.get('env') == 'developmnet') {

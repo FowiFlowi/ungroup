@@ -1,7 +1,5 @@
-module.exports = function (server) {
-	io = require('socket.io').listen(server);
-
-	io.sockets.on('connection', (socket) => {
+module.exports = function (io) {
+	io.sockets.once('connection', (socket) => {
 		let time = (new Date).toLocaleTimeString(),
 			ID = socket.id.toString().substr(0, 5);
 		console.log('New user connected: ' + ID);
