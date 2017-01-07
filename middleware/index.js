@@ -3,7 +3,6 @@ module.exports = function (app, express, io) {
 		mongoose = require('mongoose'),
 		router = require('../routes'),
 		checkAuth = require('./checkAuth'),
-		favicon = require('serve-favicon'),
 		bodyParser = require('body-parser'),
 		session = require('express-session'),
 		cookieParser = require('cookie-parser'),
