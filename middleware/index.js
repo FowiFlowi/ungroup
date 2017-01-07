@@ -2,7 +2,6 @@ module.exports = function (app, express, io) {
 	let path = require('path'),
 		mongoose = require('mongoose'),
 		router = require('../routes'),
-		checkAuth = require('./checkAuth'),
 		bodyParser = require('body-parser'),
 		session = require('express-session'),
 		cookieParser = require('cookie-parser'),
