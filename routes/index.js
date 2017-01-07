@@ -3,7 +3,7 @@ let logger = require('../utils/log')(module);
 // 	authentication = require('./authentication'),
 // 	error = require('./error');
 
-module.exports = function (app, io) {
+module.exports = function (app, server) {
 	app.get('/', (req, res) => {
 		res.redirect('/home');
 	});
@@ -21,7 +21,7 @@ module.exports = function (app, io) {
 	});
 
 	app.get('/chat', (req, res) => {
-		let sio = require('../utils/io')(io);
+		let io = require('socket.io').listen(server);
 		res.render('chat.jade', {page: 'Chat'});
 	});
 

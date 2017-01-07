@@ -1,3 +1,5 @@
 {"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-07T21:05:32.517Z"}
 {"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-07T21:52:30.931Z"}
 {"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-07T22:45:07.718Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-07T22:49:16.302Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-07T22:49:18.517Z"}
