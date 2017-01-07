@@ -20,7 +20,7 @@ module.exports = function (app, express, io) {
 	app.set('views engine', 'jade');
 
 	// Application-level middleware
-	app.use(favicon('public/images/favicon.ico')); 					// Favicon
+	app.use(favicon('/images/favicon.ico')); 					// Favicon
 	app.use(express.static(path.join(__dirname, '..', 'public')));	// Public directory
 	app.use(bodyParser.json());
 	app.use(bodyParser.urlencoded({ extended: true }));

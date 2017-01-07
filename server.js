@@ -5,8 +5,9 @@ let http = require('http'),
 	io = require('socket.io').listen(server),
 	middleware = require('./middleware')(app, express, io),
 	config = require('./config'),
-	logger = require('./utils/log')(module);
+	logger = require('./utils/log')(module),
+	PORT = process.env.PORT || config.get('port');
 
-server.listen(process.env.PORT || config.get('port'), () => {
-	logger.info('Express server is listening on port ' + config.get('port'));
+server.listen(PORT, () => {
+	logger.info('Express server is listening on port ' + PORT);
 });
