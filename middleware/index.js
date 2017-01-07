@@ -10,7 +10,8 @@ module.exports = function (app, express, io) {
 		config = require('../config'),
 		logger = require('../utils/log')(module),
 		passport = require('passport'),
-		flash = require('connect-flash');
+		flash = require('connect-flash'),
+		favicon = require('serve-favicon');
 
 	app.disable('x-powered-by');									// disable the unnecessery http-head
 
@@ -18,7 +19,7 @@ module.exports = function (app, express, io) {
 	app.set('views engine', 'jade');
 
 	// Application-level middleware
-	app.use(favicon('/images/favicon.ico')); 					// Favicon
+	app.use(favicon('public/images/favicon.ico')); 					// Favicon
 	app.use(express.static(path.join(__dirname, '..', 'public')));	// Public directory
 	app.use(bodyParser.json());
 	app.use(bodyParser.urlencoded({ extended: true }));
