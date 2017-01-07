@@ -1,4 +1,5 @@
-// let register = require('./register'),
+let logger = require('../utils/log')(module);
+	// auth = require('./auth');
 // 	authentication = require('./authentication'),
 // 	error = require('./error');
 
@@ -14,15 +15,17 @@ module.exports = function (app, io) {
 	app.get('/list', (req, res) => {
 		let Student = require('../models/student');
 			Student.find((err, students) => {
-				if (err) console.error;
+				if (err) logger.error(err);
 				res.render('list.jade', {page: 'List', list: students});
 			});
 	});
 
 	app.get('/chat', (req, res) => {
-		let sio = require('./io')(io);
+		let sio = require('../utils/io')(io);
 		res.render('chat.jade', {page: 'Chat'});
 	});
+
+	// auth(app);
 
 	// app.post('/register', register.requestRegistration);
 

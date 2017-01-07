@@ -7,6 +7,7 @@ mongoose.connect(config.get('db:connection') + '/' + config.get('db:name'));
 
 db.on('error', (err) => {
 	logger.error(err);
+	process.exit(1);
 });
 
 db.once('open', () => {

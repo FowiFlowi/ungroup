@@ -2,48 +2,60 @@ module.exports = function (app, express, io) {
 	let path = require('path'),
 		mongoose = require('mongoose'),
 		router = require('../routes'),
-		errorHandler = require('./errorHandler')(app, express),
 		checkAuth = require('./checkAuth'),
-		favicon = require('serve-favicon');
+		favicon = require('serve-favicon'),
+		bodyParser = require('body-parser'),
+		session = require('express-session'),
+		cookieParser = require('cookie-parser'),
+		MongoStore = require('connect-mongo')(session),
+		mongoCon = require('../utils/mongoose'),
+		config = require('../config'),
+		logger = require('../utils/log')(module),
+		passport = require('passport'),
+		flash = require('connect-flash');
 
-
-	app.disable('x-powered-by');									// off the waste http-head
+	app.disable('x-powered-by');									// disable the unnecessery http-head
 
 	app.set('views', path.join(__dirname,'..', 'views'))
-	app.set('views engine', 'jade');								// Page Rendering
+	app.set('views engine', 'jade');
 
+	// Application-level middleware
 	app.use(favicon('public/images/favicon.ico')); 					// Favicon
-
 	app.use(express.static(path.join(__dirname, '..', 'public')));	// Public directory
-
-	router(app, io);
-
-	// // Logger
-	// if (app.get('env') == 'developmnet') {
-	// 	app.user(express.logger('dev'));
-	// }
-
-	// // Session
-	// app.use(express.bodyParser());
-	// app.use(express.cookieParser());
-	// app.use(express.session({
-	// 	secret: config.get('session:secret'),
-	// 	key: config.get('session:key'),
-	// 	cookie: config.get('session:cookie'),
-	// 	store: new MongoStore({mongoose_connection: mongoose.connection})
-	// }))
+	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded({ extended: true }));
+	app.use(cookieParser());
+	app.use(session({
+		secret: config.get('session:secret'),
+		resave: false,
+		saveUninitialized: true,
+		store: new MongoStore({
+			mongooseConnection: mongoCon.connection
+		})
+	}));
+	app.use(flash());
+	app.use(passport.initialize());
+	app.use(passport.session());
 
 	// Authorization Access
 	// app.use(checkAuth);
 
-	// Routing
-	// app.use(app.router);
-	// router(app);
-
-	// Public directory
-	// app.use(express.static(path.join(__dirname, '../public')));
-	// app.use('/public', express.static(path.join(__dirname, '../public')));
+	// Router-level middleware
+	router(app, io);
 	
-	// Error handing
-	// app.use(errorHandler);
+	// Error-handing middleware
+	app.use((req, res, next) => {
+		let err = new Error('Not Found');
+		err.status = 404;
+		logger.error(err);
+		next(err);
+	});
+	app.use((err, req, res, next) => {
+		let status = err.status || 500;
+		if (status == 500) {
+			let error = new Error('Server error');
+    		logger.error(error);
+    	}
+    	res.render('error.jade', { status });
+	});
 }
