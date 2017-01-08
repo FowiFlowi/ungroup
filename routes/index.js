@@ -1,7 +1,5 @@
 let logger = require('../utils/log')(module);
 	// auth = require('./auth');
-// 	authentication = require('./authentication'),
-// 	error = require('./error');
 
 module.exports = function (app, server) {
 	app.get('/', (req, res) => {
@@ -26,11 +24,4 @@ module.exports = function (app, server) {
 	});
 
 	// auth(app);
-
-	// app.post('/register', register.requestRegistration);
-
-	// app.get('/users', authentication.users);
-	// app.get('/users/:id', authentication.user);
-
-	// app.get('*', error['404']);
 };

@@ -19,7 +19,11 @@ module.exports = function (app, express, server) { // io
 	app.set('views engine', 'jade');
 
 	// Application-level middleware
-	app.use(favicon('public/images/favicon.ico')); 					// Favicon
+	app.use(favicon('/public/images/favicon.ico')); 				// Favicon
+	app.use((req, res, next) => {									// log request
+		logger.info(req.method, req.url);
+		next();
+	});
 	app.use(express.static(path.join(__dirname, '..', 'public')));	// Public directory
 	app.use(bodyParser.json());
 	app.use(bodyParser.urlencoded({ extended: true }));
@@ -44,10 +48,14 @@ module.exports = function (app, express, server) { // io
 	
 	// Error-handing middleware
 	app.use((req, res, next) => {
-		let err = new Error('Not Found');
-		err.status = 404;
-		logger.error(err);
-		next(err);
+		if (!(req.url).match(/io.js$/)) {
+			console.log('WHYY');
+			let err = new Error('Not Found');
+			err.status = 404;
+			logger.error(err);
+			next(err);
+		}
+		next();
 	});
 	app.use((err, req, res, next) => {
 		let status = err.status || 500;
