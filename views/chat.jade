@@ -3,7 +3,6 @@ block content
 	title= Chat
 	head
 		link(rel='stylesheet' href='/bootstrap/css/bootstrap.min.css' type='text/css' mdeia='all')
-		script(src='/socket.io/socket.io.js')
   
 	style.
 		html
@@ -135,6 +134,7 @@ block content
 					button(type='submit' class='btn btn-success hidden-sm hidden-xs'): i(class='glyphicon glyphicon-send')
 				a( class="topbutton hidden-sm hidden-xs" href="#"): i(class='glyphicon glyphicon-chevron-up')
 
+	script(src='https://cdn.socket.io/socket.io-1.4.5.js')
 	script(type='text/javascript').
 		var socket = io({transports: ['websocket']}),
 			messagesContainer = document.getElementById('messages');
