@@ -52,13 +52,6 @@ module.exports = function (app, express, server) { // io
 			err.status = 404;
 			logger.error(err);
 			next(err);
-		// if (!(req.url).match(/io.js$/)) {
-		// 	let err = new Error('Not Found');
-		// 	err.status = 404;
-		// 	logger.error(err);
-		// 	next(err);
-		// }
-		// next();
 	});
 	app.use((err, req, res, next) => {
 		let status = err.status || 500;

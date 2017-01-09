@@ -19,7 +19,8 @@ module.exports = function (app, server) {
 	});
 
 	app.get('/chat', (req, res) => {
-		let io = require('socket.io').listen(server);
+		let io = require('socket.io').listen(server),
+			sio = require('../utils/io')(io);
 		res.render('chat.jade', {page: 'Chat'});
 	});
 
