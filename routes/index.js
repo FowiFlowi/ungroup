@@ -1,5 +1,5 @@
-let logger = require('../utils/log')(module);
-	// auth = require('./auth');
+let logger = require('../utils/log')(module),
+	auth = require('./auth');
 
 module.exports = function (app, server) {
 	app.get('/', (req, res) => {
@@ -11,18 +11,21 @@ module.exports = function (app, server) {
 	});
 
 	app.get('/list', (req, res) => {
-		let Student = require('../models/student');
-			Student.find((err, students) => {
-				if (err) logger.error(err);
-				res.render('list.jade', {page: 'List', list: students});
-			});
+		let student = new require('../models/student')();
+		student.getAll((err, list) => {
+			if (err) logger.error(err)
+			else res.render('list.jade', {page: 'List', list});
+		}
 	});
 
 	app.get('/chat', (req, res) => {
-		let io = require('socket.io').listen(server),
-			sio = require('../utils/io')(io);
+		let io = require('../utils/io')(require('socket.io').listen(server, {
+			'reconnection': true,
+			'reconnectionDelay': 500,
+			'reconnectionAttempts': 10
+		}));
 		res.render('chat.jade', {page: 'Chat'});
 	});
 
-	// auth(app);
+	auth(app);
 };

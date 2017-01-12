@@ -12,6 +12,10 @@ db.on('error', (err) => {
 
 db.once('open', () => {
 	logger.info('Connected to database');
-})
+});
+
+db.once('close', () => {
+	logger.info('Connection has closed');
+});
 
 module.exports = mongoose;

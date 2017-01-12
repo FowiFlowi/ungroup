@@ -136,9 +136,9 @@ block content
 
 	script(src='/socket.io/socket.io.js')
 	script(type='text/javascript').
-		//- var socket = io({transports: ['websocket']}),
-		var socket = io(),
+		var socket = io({transports: ['websocket']}),
 			messagesContainer = document.getElementById('messages');
+
 			//mymessContainer = document.getElementById('AlianMess');
 
 		socket.on('messageSent', (data) => {

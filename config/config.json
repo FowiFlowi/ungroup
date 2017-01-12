@@ -7,5 +7,14 @@
 	"session": {
 		"secret": "I want to die"
 	},
+	"app": {
+		"url": "https://kvgroup.herokuapp.com"
+	},
+	"auth": {
+		"vk": {
+			"app_id": 5813491,
+			"secret": "smthkek"
+		}
+	},
 	"mode": "dev"
 }

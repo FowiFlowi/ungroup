@@ -20,7 +20,7 @@ module.exports = function (app, express, server) { // io
 
 	// Application-level middleware
 	app.use(favicon(__dirname + '/../public/images/favicon.ico')); 	// Favicon
-	app.use((req, res, next) => {									// log request
+	app.use((req, res, next) => {									// logging request
 		logger.info(req.method, req.url);
 		next();
 	});
@@ -49,15 +49,17 @@ module.exports = function (app, express, server) { // io
 	// Error-handing middleware
 	app.use((req, res, next) => {
 		let err = new Error('Not Found');
-			err.status = 404;
-			logger.error(err);
-			next(err);
+		err.status = 404;
+		let status = err.status;
+		logger.error(err + 'Nothing on ' + req.url);
+		res.render('error.jade', { status });
+		next(err);
 	});
 	app.use((err, req, res, next) => {
 		let status = err.status || 500;
 		if (status == 500) {
 			let error = new Error('Server error');
-    		logger.error(error);
+    		logger.error(error, err);
     	}
     	res.render('error.jade', { status });
 	});

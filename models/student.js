@@ -8,4 +8,9 @@ let mongoose = require('../utils/mongoose'),
 		vkref: String
 	});
 
+
+Student.methods.getAll = function (cb) {
+	return this.model('Student').find(cb);
+}
+
 module.exports = mongoose.model('Student', Student);

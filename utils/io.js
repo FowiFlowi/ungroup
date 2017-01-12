@@ -1,4 +1,4 @@
-logger = require('../utils/log')(module);
+logger = require('./log')(module);
 
 module.exports = function (io) {
 	io.sockets.once('connection', (socket) => {
