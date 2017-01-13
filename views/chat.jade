@@ -2,7 +2,8 @@ extends layout
 block content
 	title= Chat
 	head
-		link(rel='stylesheet' href='/bootstrap/css/bootstrap.min.css' type='text/css' mdeia='all')
+		link(rel='stylesheet' href='bootstrap.min.css' type='text/css' mdeia='all')
+		
   
 	style.
 		html
@@ -132,13 +133,11 @@ block content
 				div.form-group
 					input(type='text' class='form-control' name='message' placeholder='Enter your message' autocomplete='off')
 					button(type='submit' class='btn btn-success hidden-sm hidden-xs'): i(class='glyphicon glyphicon-send')
-				a( class="topbutton hidden-sm hidden-xs" href="#"): i(class='glyphicon glyphicon-chevron-up')
+				a(class="topbutton hidden-sm hidden-xs" href="#"): i(class='glyphicon glyphicon-chevron-up')
 
-	script(src='/socket.io/socket.io.js')
 	script(type='text/javascript').
 		var socket = io({transports: ['websocket']}),
 			messagesContainer = document.getElementById('messages');
-
 			//mymessContainer = document.getElementById('AlianMess');
 
 		socket.on('messageSent', (data) => {
@@ -159,7 +158,7 @@ block content
 		{
 			
 			var div = document.createElement('DIV');
-			div.innerHTML = '<div class="message"><div class="panel panel-dafault><div class="panel-heading"><div class="data"><h3>'+data.name+'</h3></div><div class="panel-body"><div class="text"><h3>'+data.text+'</h3></div></div></div></div>';
+			div.innerHTML = '<div class="message"><div class="text"><h3>'+data.text+'</h3></div></div>';
 
 
 			messagesContainer.insertBefore(div, null);
@@ -168,7 +167,7 @@ block content
 		function renderAlianMess(data) // Сообщение от другого юзера 
 		{
 			var div = document.createElement('DIV');
-			div.innerHTML ='<div class="Almessage"><div class="panel panel-dafault><div class="panel-heading"><div class="Aldata">'+data.name+'</div><div class="panel-body"><div class="Altext">'+data.text+'</div></div></div></div>';
+			div.innerHTML ='<div class="Almessage"><div class="Aldata">'+data.name+'</div><div class="Altext">'+data.text+'</div></div></div>';
 
 			messagesContainer.insertBefore(div,null);
 		}
