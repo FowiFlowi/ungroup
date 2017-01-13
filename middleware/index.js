@@ -58,8 +58,8 @@ module.exports = function (app, express, server) { // io
 	app.use((err, req, res, next) => {
 		let status = err.status || 500;
 		if (status == 500) {
-			let error = new Error('Server error');
-    		logger.error(error, err);
+			// let error = new Error('Server error');
+    		logger.error(err);
     	}
     	res.render('error.jade', { status });
 	});

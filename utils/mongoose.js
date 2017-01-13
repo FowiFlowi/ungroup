@@ -1,9 +1,12 @@
 let mongoose = require('mongoose'),
 	config = require('../config'),
 	logger = require('./log.js')(module),
-	db = mongoose.connection;
+	db = mongoose.connection,
 
-mongoose.connect(config.get('db:connection') + '/' + config.get('db:name'));
+	options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
+				replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } }; 
+
+mongoose.connect(config.get('db:connection') + '/' + config.get('db:name'), options);
 
 db.on('error', (err) => {
 	logger.error(err);

@@ -3,21 +3,6 @@ let passport = require('passport'),
 	config = require('../config'),
 	logger = require('../utils/log')(module);
 
-passport.use('local', new AuthLocalStrategy(
-    function (username, password, done) {
-        if (username == "admin" && password == "admin") {
-            return done(null, {
-                username: "admin",
-                photoUrl: "url_to_avatar",
-                profileUrl: "url_to_profile"
-            });
-        };
-        return done(null, false, { 
-            message: 'Неверный логин или пароль' 
-        });
-    };
-));
-
 passport.use('vk', new VkStrategy({
 	clientID: cinfig.get('auth:vk:app_id'),
 	clientSecret: config.get('auth:vk:secret'),

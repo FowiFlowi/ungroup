@@ -1,7 +1,7 @@
 logger = require('./log')(module);
 
 module.exports = function (io) {
-	io.sockets.once('connection', (socket) => {
+	io.sockets.on('connection', (socket) => {
 		let time = (new Date).toLocaleTimeString(),
 			ID = socket.id.toString().substr(0, 5);
 		logger.info('New user connected: ' + ID);

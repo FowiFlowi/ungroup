@@ -15,7 +15,7 @@ module.exports = function (app, server) {
 		student.getAll((err, list) => {
 			if (err) logger.error(err)
 			else res.render('list.jade', {page: 'List', list});
-		}
+		});
 	});
 
 	app.get('/chat', (req, res) => {
