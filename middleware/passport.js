@@ -8,9 +8,10 @@ passport.use('vk', new VkStrategy({
 	clientID: config.get('auth:vk:app_id'),
 	clientSecret: config.get('auth:vk:secret'),
 	callbackURL: config.get('app:url') + '/auth/vk/callback'
-	
+
 }, (accessToken, refreshToken, profile, done) => {
 	logger.info('vk auth: ' + profile);
+	console.log(profile);
 	return done(null, {
 		username: profile.displayName,
 		photoUrl: profile.photos[0].value,
