@@ -7,8 +7,6 @@ let http = require('http'),
 	logger = require('./utils/log')(module),
 	PORT = process.env.PORT || config.get('port');
 
-console.log(config.get('auth:vk:secret'));
-
 server.listen(PORT, () => {
 	logger.info('Express server is listening on port ' + PORT);
 });
