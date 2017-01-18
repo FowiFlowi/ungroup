@@ -6,24 +6,17 @@ module.exports = function (app) {
 			res.redirect('/');
 			return;
 		};
-		res.render('auth', { error: req.flash('error') });
+		res.render('auth.jade', { error: req.flash('error') });
 	});
 
 	app.get('/sigh-out', (req, res) => {
 		req.logout();
-		res.redirect('/');
+		res.redirect('/home');
 	});
-
-	app.post('/auth', passport.authenticate('local', {
-		successRedirect: '/',
-		failureRedirect: '/auth',
-		failureFlash: true
-	}));
 
 	app.get('/auth/vk', passport.authenticate('vk', { scope: ['frineds'] }), (req, res) => {  });
 
 	app.get('/auth/vk/callback', passport.authenticate('vk', { failureRedirect: '/auth' }), (req, res) => {
-		console.log('ZDESYAA');
 		res.redirect('/home');
 	});
 }

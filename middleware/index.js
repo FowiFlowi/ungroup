@@ -10,10 +10,9 @@ module.exports = function (app, express, server) {
 		config = require('../config'),
 		logger = require('../utils/log')(module),
 		passport = require('passport'),
-		flash = require('connect-flash'),
-		favicon = require('serve-favicon');
-
-	require('./passport')(app);
+		favicon = require('serve-favicon'),
+		checkAuth = require('./checkAuth');
+					require('./passport')(app);
 
 	app.disable('x-powered-by');									// disable the unnecessery http-head
 
@@ -38,17 +37,11 @@ module.exports = function (app, express, server) {
 			mongooseConnection: mongoCon.connection
 		})
 	}));
-	app.use(flash());
 	app.use(passport.initialize());
 	app.use(passport.session());
-	app.use((req, res, next) => {
-		console.log(req.user);
-		console.log(req.session.passport);
-		next();
-	});
 
 	// Authorization Access
-	// app.use(checkAuth);
+	app.use(checkAuth);
 
 	// Router-level middleware
 	router(app, server);
