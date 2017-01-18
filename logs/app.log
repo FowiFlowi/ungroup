@@ -989,3 +989,10 @@
 {"level":"info","message":"GET /bootstrap/fonts/glyphicons-halflings-regular.woff2","timestamp":"2017-01-18T16:38:07.034Z"}
 {"level":"info","message":"New user connected: 967","timestamp":"2017-01-18T16:38:07.097Z"}
 {"level":"info","message":"New user connected: 945","timestamp":"2017-01-18T16:38:07.803Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T16:48:28.606Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T16:48:30.779Z"}
+{"level":"info","message":"GET /chat","timestamp":"2017-01-18T16:48:31.399Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T16:48:34.356Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T16:48:34.400Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.min.css","timestamp":"2017-01-18T16:48:34.454Z"}
+{"level":"info","message":"New user connected: 58","timestamp":"2017-01-18T16:48:37.630Z"}
