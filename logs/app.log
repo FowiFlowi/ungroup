@@ -1185,3 +1185,10 @@
 {"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T21:34:44.509Z"}
 {"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T21:34:44.546Z"}
 {"level":"info","message":"GET /auth/vk","timestamp":"2017-01-18T21:35:04.869Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:44:38.901Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:44:41.031Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:44:44.965Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:44:49.313Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:44:51.148Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:54:37.833Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:54:39.673Z"}

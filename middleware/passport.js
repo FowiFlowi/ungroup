@@ -4,9 +4,11 @@ let passport = require('passport'),
 	logger = require('../utils/log')(module);
 
 passport.use('vk', new VkStrategy({
+
 	clientID: config.get('auth:vk:app_id'),
 	clientSecret: config.get('auth:vk:secret'),
 	callbackURL: config.get('app:url') + '/auth/vk/callback'
+	
 }, (accessToken, refreshToken, profile, done) => {
 	logger.info('vk auth: ' + profile);
 	return done(null, {

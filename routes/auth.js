@@ -23,6 +23,7 @@ module.exports = function (app) {
 	app.get('/auth/vk', passport.authenticate('vk', { scope: ['frineds'] }), (req, res) => {  });
 
 	app.get('/auth/vk/callback', passport.authenticate('vk', { failureRedirect: '/auth' }), (req, res) => {
+		console.log('ZDESYAA');
 		res.redirect('/home');
 	});
 }
