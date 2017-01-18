@@ -47,20 +47,20 @@ module.exports = function (app, express, server) { // io
 	router(app, server);
 	
 	// Error-handing middleware
-	app.use((req, res, next) => {
-		let err = new Error('Not Found');
-		err.status = 404;
-		let status = err.status;
-		logger.error(err + 'Nothing on ' + req.url);
-		res.render('error.jade', { status });
+	app.use((err, req, res, next) => {
+		// let error = new Error('Not Found');
+		// err.status = 404;
+		// let status = err.status;
+		// logger.error(err + 'Nothing on ' + req.url);
+		res.render('error.jade');
 		next(err);
 	});
-	app.use((err, req, res, next) => {
-		let status = err.status || 500;
-		if (status == 500) {
-			// let error = new Error('Server error');
-    		logger.error(err);
-    	}
-    	res.render('error.jade', { status });
-	});
+	// app.use((req, res, next) => {
+	// 	let status = err.status || 500;
+	// 	if (status == 500) {
+	// 		// let error = new Error('Server error');
+ //    		logger.error(err);
+ //    	}
+ //    	res.render('error.jade', { status });
+	// });
 }

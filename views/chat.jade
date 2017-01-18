@@ -2,7 +2,7 @@ extends layout
 block content
 	title= Chat
 	head
-		link(rel='stylesheet' href='bootstrap.min.css' type='text/css' mdeia='all')
+		link(rel='stylesheet' href='bootstrap/css/bootstrap.min.css' type='text/css' mdeia='all')
 		
   
 	style.
@@ -134,23 +134,28 @@ block content
 					input(type='text' class='form-control' name='message' placeholder='Enter your message' autocomplete='off')
 					button(type='submit' class='btn btn-success hidden-sm hidden-xs'): i(class='glyphicon glyphicon-send')
 				a(class="topbutton hidden-sm hidden-xs" href="#"): i(class='glyphicon glyphicon-chevron-up')
-
+	script(src='/socket.io/socket.io.js')
 	script(type='text/javascript').
-		var socket = io({transports: ['websocket']}),
+		var socket = io(),
 			messagesContainer = document.getElementById('messages');
 			//mymessContainer = document.getElementById('AlianMess');
+		socket.connect();
 
-		socket.on('messageSent', (data) => {
-			renderMessage(data);
+		socket.on('connect', function () {
+
 		});
 
-		socket.on('messageReceived',(data)=>{
-			renderAlianMess(data);
+		socket.on('messageSent', function(msg) {
+			renderMessage(msg);
+		});
+
+		socket.on('messageReceived', function(msg) {
+			renderAlianMess(msg);
 		});
 
 		function sendMessage(message) {
 			if (message) {
-				socket.emit('message', {message: message});
+				socket.emit('message', message);
 			}
 		}
 

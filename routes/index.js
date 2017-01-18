@@ -19,11 +19,7 @@ module.exports = function (app, server) {
 	});
 
 	app.get('/chat', (req, res) => {
-		let io = require('../utils/io')(require('socket.io').listen(server, {
-			'reconnection': true,
-			'reconnectionDelay': 500,
-			'reconnectionAttempts': 10
-		}));
+		let io = require('../utils/io')(server);
 		res.render('chat.jade', {page: 'Chat'});
 	});
 
