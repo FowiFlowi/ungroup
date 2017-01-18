@@ -996,3 +996,192 @@
 {"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T16:48:34.400Z"}
 {"level":"info","message":"GET /bootstrap/css/bootstrap.min.css","timestamp":"2017-01-18T16:48:34.454Z"}
 {"level":"info","message":"New user connected: 58","timestamp":"2017-01-18T16:48:37.630Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T19:13:36.782Z"}
+{"level":"info","message":"GET /","timestamp":"2017-01-18T19:13:39.982Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T19:14:44.671Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T19:14:57.561Z"}
+{"level":"info","message":"GET /","timestamp":"2017-01-18T19:15:02.060Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T19:15:03.105Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:15:06.190Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:15:06.233Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T19:15:06.970Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T19:15:06.975Z"}
+{"level":"info","message":"GET /bootstrap/fonts/glyphicons-halflings-regular.woff2","timestamp":"2017-01-18T19:15:07.532Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T19:19:14.879Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:19:20.366Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:19:20.393Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T19:19:23.785Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T19:19:23.813Z"}
+{"level":"info","message":"GET /list","timestamp":"2017-01-18T19:20:55.433Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:20:56.934Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:20:57.001Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T19:21:27.068Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:21:28.936Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:21:28.942Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T19:21:29.654Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T19:21:29.703Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T19:24:32.009Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:24:33.609Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:24:33.657Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T19:24:34.334Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T19:24:34.374Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T19:28:18.437Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T19:28:20.758Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T19:28:21.347Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:28:24.195Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:28:24.262Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T19:28:25.385Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T19:28:25.437Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T19:35:52.000Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T19:35:53.707Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T19:35:54.097Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:35:57.550Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:35:57.602Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T19:35:58.646Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T19:35:58.685Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T19:45:27.025Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T19:45:29.200Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T19:45:35.777Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:45:38.992Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:45:39.037Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T19:45:40.622Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T19:45:40.655Z"}
+{"level":"info","message":"GET /chat","timestamp":"2017-01-18T19:47:52.316Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:47:54.421Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:47:54.477Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:47:54.532Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:47:57.534Z"}
+{"level":"info","message":"GET /chat?message=%D1%84%D1%8B%D0%B2","timestamp":"2017-01-18T19:48:00.760Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:48:01.918Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:48:01.999Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:48:02.077Z"}
+{"level":"info","message":"GET /chat?message=%D1%84%D1%8B%D0%B2","timestamp":"2017-01-18T19:49:51.873Z"}
+{"level":"info","message":"GET /chat","timestamp":"2017-01-18T19:49:57.919Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:50:01.487Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:50:01.562Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:50:01.601Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:50:02.727Z"}
+{"level":"info","message":"New user connected: 89","timestamp":"2017-01-18T19:50:03.922Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T19:54:07.887Z"}
+{"level":"info","message":"GET /socket.io/?EIO=3&transport=polling&t=Lcp9D3Z","timestamp":"2017-01-18T19:54:11.712Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T19:54:12.182Z"}
+{"level":"info","message":"GET /socket.io/?EIO=3&transport=polling&t=Lcp9Eh6","timestamp":"2017-01-18T19:54:18.206Z"}
+{"level":"info","message":"GET /chat","timestamp":"2017-01-18T19:54:30.189Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:54:33.983Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:54:34.091Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:54:34.149Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:54:34.975Z"}
+{"level":"info","message":"GET /chat?message=sad","timestamp":"2017-01-18T19:54:45.178Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:54:46.576Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:54:46.637Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:54:46.692Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:54:48.519Z"}
+{"level":"info","message":"GET /chat","timestamp":"2017-01-18T19:55:16.793Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:55:18.692Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:55:18.730Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:55:18.769Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:55:19.469Z"}
+{"level":"info","message":"New user connected: 84","timestamp":"2017-01-18T19:55:20.167Z"}
+{"level":"info","message":"User disconnected: 84","timestamp":"2017-01-18T19:55:50.682Z"}
+{"level":"info","message":"GET /chat","timestamp":"2017-01-18T19:55:50.724Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:55:52.356Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:55:52.406Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:55:52.452Z"}
+{"level":"info","message":"GET /bootstrap.min.css","timestamp":"2017-01-18T19:55:53.210Z"}
+{"level":"info","message":"New user connected: 78","timestamp":"2017-01-18T19:55:53.495Z"}
+{"level":"info","message":"User disconnected: 78","timestamp":"2017-01-18T19:58:54.306Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T19:58:54.376Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T19:58:56.632Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T19:58:56.689Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T19:58:56.745Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T19:58:56.787Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T20:07:42.684Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T20:07:43.546Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T20:07:43.572Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T20:07:44.997Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T20:07:45.026Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T20:09:26.511Z"}
+{"level":"info","message":"GET /images/primat404.png","timestamp":"2017-01-18T20:09:28.726Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T20:09:58.131Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T20:09:59.167Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T20:09:59.258Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T20:10:00.121Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T20:10:00.177Z"}
+{"level":"info","message":"GET /bootstrap/fonts/glyphicons-halflings-regular.woff2","timestamp":"2017-01-18T20:10:00.295Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T20:10:27.330Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T20:10:28.145Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T20:10:28.222Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T20:10:28.819Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T20:10:28.858Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T20:13:28.070Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T20:13:31.342Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T20:13:31.492Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T20:13:32.672Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T20:13:32.782Z"}
+{"level":"info","message":"GET /auth/vk","timestamp":"2017-01-18T20:13:38.818Z"}
+{"level":"info","message":"GET /auth/images/primat404.png","timestamp":"2017-01-18T20:13:39.463Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T20:18:36.676Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T20:18:39.063Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T20:24:49.354Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T20:24:52.789Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T20:24:54.591Z"}
+{"message":"connection timeout","stack":"Error: connection timeout\n    at Db.<anonymous> (/home/fowi/Documents/GIT/ungroup/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:169:17)\n    at emitTwo (events.js:106:13)\n    at Db.emit (events.js:191:7)\n    at Server.listener (/home/fowi/Documents/GIT/ungroup/node_modules/mongodb/lib/db.js:1786:14)\n    at emitOne (events.js:96:13)\n    at Server.emit (events.js:188:7)\n    at Server.<anonymous> (/home/fowi/Documents/GIT/ungroup/node_modules/mongodb/lib/server.js:274:14)\n    at emitOne (events.js:96:13)\n    at Server.emit (events.js:188:7)\n    at Pool.<anonymous> (/home/fowi/Documents/GIT/ungroup/node_modules/mongodb-core/lib/topologies/server.js:334:12)\n    at emitOne (events.js:96:13)\n    at Pool.emit (events.js:188:7)\n    at Connection.<anonymous> (/home/fowi/Documents/GIT/ungroup/node_modules/mongodb-core/lib/connection/pool.js:270:12)\n    at Connection.g (events.js:291:16)\n    at emitTwo (events.js:106:13)\n    at Connection.emit (events.js:191:7)\n    at Socket.<anonymous> (/home/fowi/Documents/GIT/ungroup/node_modules/mongodb-core/lib/connection/connection.js:183:10)\n    at Socket.g (events.js:291:16)\n    at emitNone (events.js:86:13)\n    at Socket.emit (events.js:185:7)\n    at Socket._onTimeout (net.js:339:8)\n    at ontimeout (timers.js:365:14)","level":"error","timestamp":"2017-01-18T20:29:54.434Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:01:18.851Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:01:20.395Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:02:02.329Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:02:03.770Z"}
+{"level":"info","message":"GET /","timestamp":"2017-01-18T21:02:13.700Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T21:02:14.577Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T21:02:18.260Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T21:02:18.306Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T21:02:19.066Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T21:02:19.126Z"}
+{"level":"info","message":"GET /bootstrap/fonts/glyphicons-halflings-regular.woff2","timestamp":"2017-01-18T21:02:19.128Z"}
+{"level":"info","message":"GET /auth/vk","timestamp":"2017-01-18T21:02:28.607Z"}
+{"level":"error","message":"Error: Unknown authentication strategy \"vk\"\n    at attempt (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:173:37)\n    at authenticate (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:349:7)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/route.js:131:13)\n    at Route.dispatch (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/route.js:112:3)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at /home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:277:22\n    at Function.process_params (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:330:12)\n    at next (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:271:10)\n    at app.use (/home/fowi/Documents/GIT/ungroup/middleware/index.js:44:3)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:312:13)\n    at /home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:280:7\n    at Function.process_params (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:330:12)\n    at next (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:271:10)\n    at SessionStrategy.strategy.pass (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:325:9)\n    at SessionStrategy.authenticate (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/strategies/session.js:71:10)\n    at attempt (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:348:16)\n    at authenticate (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:349:7)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:312:13)\n    at /home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:280:7","timestamp":"2017-01-18T21:02:29.133Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:03:33.566Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:03:35.090Z"}
+{"level":"info","message":"GET /auth/vk","timestamp":"2017-01-18T21:03:37.467Z"}
+{"level":"error","message":"Error: Unknown authentication strategy \"vk\"\n    at attempt (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:173:37)\n    at authenticate (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:349:7)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/route.js:131:13)\n    at Route.dispatch (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/route.js:112:3)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at /home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:277:22\n    at Function.process_params (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:330:12)\n    at next (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:271:10)\n    at app.use (/home/fowi/Documents/GIT/ungroup/middleware/index.js:44:3)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:312:13)\n    at /home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:280:7\n    at Function.process_params (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:330:12)\n    at next (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:271:10)\n    at SessionStrategy.strategy.pass (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:325:9)\n    at SessionStrategy.authenticate (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/strategies/session.js:71:10)\n    at attempt (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:348:16)\n    at authenticate (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:349:7)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:312:13)\n    at /home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:280:7","timestamp":"2017-01-18T21:03:37.726Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:03:58.672Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:04:00.034Z"}
+{"level":"info","message":"GET /","timestamp":"2017-01-18T21:07:15.040Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T21:07:15.260Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T21:07:19.214Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T21:07:19.628Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T21:07:20.292Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T21:07:20.321Z"}
+{"level":"info","message":"GET /bootstrap/fonts/glyphicons-halflings-regular.woff2","timestamp":"2017-01-18T21:07:21.427Z"}
+{"message":"connection timeout","stack":"Error: connection timeout\n    at Db.<anonymous> (/home/fowi/Documents/GIT/ungroup/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js:169:17)\n    at emitTwo (events.js:106:13)\n    at Db.emit (events.js:191:7)\n    at Server.listener (/home/fowi/Documents/GIT/ungroup/node_modules/mongodb/lib/db.js:1786:14)\n    at emitOne (events.js:96:13)\n    at Server.emit (events.js:188:7)\n    at Server.<anonymous> (/home/fowi/Documents/GIT/ungroup/node_modules/mongodb/lib/server.js:274:14)\n    at emitOne (events.js:96:13)\n    at Server.emit (events.js:188:7)\n    at Pool.<anonymous> (/home/fowi/Documents/GIT/ungroup/node_modules/mongodb-core/lib/topologies/server.js:334:12)\n    at emitOne (events.js:96:13)\n    at Pool.emit (events.js:188:7)\n    at Connection.<anonymous> (/home/fowi/Documents/GIT/ungroup/node_modules/mongodb-core/lib/connection/pool.js:270:12)\n    at Connection.g (events.js:291:16)\n    at emitTwo (events.js:106:13)\n    at Connection.emit (events.js:191:7)\n    at Socket.<anonymous> (/home/fowi/Documents/GIT/ungroup/node_modules/mongodb-core/lib/connection/connection.js:183:10)\n    at Socket.g (events.js:291:16)\n    at emitNone (events.js:86:13)\n    at Socket.emit (events.js:185:7)\n    at Socket._onTimeout (net.js:339:8)\n    at ontimeout (timers.js:365:14)","level":"error","timestamp":"2017-01-18T21:13:07.976Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:13:58.004Z"}
+{"level":"info","message":"GET /auth/vk","timestamp":"2017-01-18T21:14:04.162Z"}
+{"level":"info","message":"GET /auth/vk","timestamp":"2017-01-18T21:14:17.163Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:21:46.250Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:21:48.221Z"}
+{"level":"info","message":"GET /","timestamp":"2017-01-18T21:21:48.599Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T21:21:50.066Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T21:21:53.333Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T21:21:53.353Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T21:21:54.157Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T21:21:54.193Z"}
+{"level":"info","message":"GET /bootstrap/fonts/glyphicons-halflings-regular.woff2","timestamp":"2017-01-18T21:21:54.218Z"}
+{"level":"info","message":"GET /auth/vk","timestamp":"2017-01-18T21:22:10.332Z"}
+{"level":"error","message":"Error: Unknown authentication strategy \"vk\"\n    at attempt (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:173:37)\n    at authenticate (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:349:7)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/route.js:131:13)\n    at Route.dispatch (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/route.js:112:3)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at /home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:277:22\n    at Function.process_params (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:330:12)\n    at next (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:271:10)\n    at app.use (/home/fowi/Documents/GIT/ungroup/middleware/index.js:44:3)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:312:13)\n    at /home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:280:7\n    at Function.process_params (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:330:12)\n    at next (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:271:10)\n    at SessionStrategy.strategy.pass (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:325:9)\n    at SessionStrategy.authenticate (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/strategies/session.js:71:10)\n    at attempt (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:348:16)\n    at authenticate (/home/fowi/Documents/GIT/ungroup/node_modules/passport/lib/middleware/authenticate.js:349:7)\n    at Layer.handle [as handle_request] (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/layer.js:95:5)\n    at trim_prefix (/home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:312:13)\n    at /home/fowi/Documents/GIT/ungroup/node_modules/express/lib/router/index.js:280:7","timestamp":"2017-01-18T21:22:10.519Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:22:26.671Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:22:28.177Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:25:50.495Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:25:52.100Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:30:08.011Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:30:09.510Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:33:33.038Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:33:34.947Z"}
+{"level":"info","message":"GET /auth/vk","timestamp":"2017-01-18T21:33:49.450Z"}
+{"level":"info","message":"GET /auth/images/primat404.png","timestamp":"2017-01-18T21:33:51.538Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-18T21:34:38.678Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-18T21:34:40.093Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-18T21:34:40.627Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-18T21:34:43.700Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-18T21:34:43.762Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-18T21:34:44.509Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-18T21:34:44.546Z"}
+{"level":"info","message":"GET /auth/vk","timestamp":"2017-01-18T21:35:04.869Z"}

@@ -1,4 +1,4 @@
-module.exports = function (app, express, server) { // io
+module.exports = function (app, express, server) {
 	let path = require('path'),
 		mongoose = require('mongoose'),
 		router = require('../routes'),
@@ -12,6 +12,8 @@ module.exports = function (app, express, server) { // io
 		passport = require('passport'),
 		flash = require('connect-flash'),
 		favicon = require('serve-favicon');
+
+	require('./passport')(app);
 
 	app.disable('x-powered-by');									// disable the unnecessery http-head
 
@@ -39,6 +41,10 @@ module.exports = function (app, express, server) { // io
 	app.use(flash());
 	app.use(passport.initialize());
 	app.use(passport.session());
+	app.use((req, res, next) => {
+		console.log(req.session.passport);
+		next();
+	});
 
 	// Authorization Access
 	// app.use(checkAuth);
@@ -48,19 +54,13 @@ module.exports = function (app, express, server) { // io
 	
 	// Error-handing middleware
 	app.use((err, req, res, next) => {
-		// let error = new Error('Not Found');
-		// err.status = 404;
-		// let status = err.status;
-		// logger.error(err + 'Nothing on ' + req.url);
-		res.render('error.jade');
-		next(err);
+		if (~err.message.indexOf('not found'))
+			return next();
+		logger.error(err.stack);
+		res.status(500);
 	});
-	// app.use((req, res, next) => {
-	// 	let status = err.status || 500;
-	// 	if (status == 500) {
-	// 		// let error = new Error('Server error');
- //    		logger.error(err);
- //    	}
- //    	res.render('error.jade', { status });
-	// });
+
+	app.use((req, res, next) => {
+		res.status(404).render('error.jade');
+	});
 }

@@ -4,12 +4,11 @@ let passport = require('passport'),
 	logger = require('../utils/log')(module);
 
 passport.use('vk', new VkStrategy({
-	clientID: cinfig.get('auth:vk:app_id'),
+	clientID: config.get('auth:vk:app_id'),
 	clientSecret: config.get('auth:vk:secret'),
 	callbackURL: config.get('app:url') + '/auth/vk/callback'
 }, (accessToken, refreshToken, profile, done) => {
 	logger.info('vk auth: ' + profile);
-
 	return done(null, {
 		username: profile.displayName,
 		photoUrl: profile.photos[0].value,
@@ -24,7 +23,7 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((data, done) => {
 	try {
 		done(null, JSON.parse(data));
-	} catch {
+	} catch(err) {
 		done(err);
 	}
 });

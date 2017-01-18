@@ -2,7 +2,7 @@ extends layout
 block content
 	title= Chat
 	head
-		link(rel='stylesheet' href='bootstrap/css/bootstrap.min.css' type='text/css' mdeia='all')
+		link(rel='stylesheet' href='bootstrap.min.css' type='text/css' mdeia='all')
 		
   
 	style.
@@ -139,18 +139,13 @@ block content
 		var socket = io(),
 			messagesContainer = document.getElementById('messages');
 			//mymessContainer = document.getElementById('AlianMess');
-		socket.connect();
 
-		socket.on('connect', function () {
-
+		socket.on('messageSent', (data) => {
+			renderMessage(data);
 		});
 
-		socket.on('messageSent', function(msg) {
-			renderMessage(msg);
-		});
-
-		socket.on('messageReceived', function(msg) {
-			renderAlianMess(msg);
+		socket.on('messageReceived',(data)=>{
+			renderAlianMess(data);
 		});
 
 		function sendMessage(message) {

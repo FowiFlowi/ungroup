@@ -276,3 +276,14 @@
 {"level":"debug","message":"s","timestamp":"2017-01-18T16:48:45.819Z"}
 {"level":"debug","message":"s","timestamp":"2017-01-18T16:48:46.044Z"}
 {"level":"debug","message":"s","timestamp":"2017-01-18T16:48:46.306Z"}
+{"level":"info","message":"New user connected: 89","timestamp":"2017-01-18T19:50:03.921Z"}
+{"message":"asd","level":"debug","timestamp":"2017-01-18T19:50:10.001Z"}
+{"level":"info","message":"New user connected: 84","timestamp":"2017-01-18T19:55:20.166Z"}
+{"message":"qwe","level":"debug","timestamp":"2017-01-18T19:55:23.695Z"}
+{"message":"asd","level":"debug","timestamp":"2017-01-18T19:55:24.975Z"}
+{"level":"info","message":"User disconnected: 84","timestamp":"2017-01-18T19:55:50.669Z"}
+{"level":"info","message":"New user connected: 78","timestamp":"2017-01-18T19:55:53.494Z"}
+{"level":"debug","message":"asd","timestamp":"2017-01-18T19:55:57.647Z"}
+{"level":"debug","message":"as","timestamp":"2017-01-18T19:55:58.523Z"}
+{"level":"debug","message":"dsf","timestamp":"2017-01-18T19:55:58.893Z"}
+{"level":"info","message":"User disconnected: 78","timestamp":"2017-01-18T19:58:54.304Z"}
