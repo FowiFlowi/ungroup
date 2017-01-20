@@ -39,13 +39,13 @@ module.exports = function (app, express, server) {
 	}));
 	app.use(passport.initialize());
 	app.use(passport.session());
+	app.use(checkAuth); // Authorization Access
 
-	// Authorization Access
-	app.use(checkAuth);
 
 	// Router-level middleware
 	router(app, server);
 	
+
 	// Error-handing middleware
 	app.use((err, req, res, next) => {
 		if (~err.message.indexOf('not found'))
@@ -55,6 +55,6 @@ module.exports = function (app, express, server) {
 	});
 
 	app.use((req, res, next) => {
-		res.status(404).render('error.jade');
+		res.status(404).render('error404.jade');
 	});
 }
