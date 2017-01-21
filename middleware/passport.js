@@ -18,9 +18,10 @@ module.exports = function (req) {
 
 		User.findOne({ vkId: profile.id }, (err, user) => {
 			if (err) {
+				logger.error(err);
 				return done(err);
 			}
-
+			logger.info('WTF.............?')
 			if (!user) {
 				let userData = {
 					vkId: profile.id,
@@ -32,9 +33,11 @@ module.exports = function (req) {
 				user = new User(userData);
 				user.save((err) => {
 					if (err) logger.error(err);
+					logger.info('New user ' + user.username + ' has auth');
 					return done(err, user);
 				})
 			} else {
+				logger.info('User ' + user.username + ' logged on');
 				return done(err, user);
 			}
 		})

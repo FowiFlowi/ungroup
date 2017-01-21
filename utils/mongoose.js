@@ -2,6 +2,7 @@ let mongoose = require('mongoose'),
 	config = require('../config'),
 	logger = require('./log.js')(module),
 	db = mongoose.connection,
+	mongoose.Promise = Promise;
 
 	options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
 				replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } }; 
