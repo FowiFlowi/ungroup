@@ -41,7 +41,7 @@ User.methods.findOrCreate = function(userData, cb) {
 				photoUrl: 	  userData.photoUrl,
 				profileUrl:   userData.profileUrl
 			});
-			user.save();
+			// user.save();
 			logger.info('User ' + userData.username + ' has registered');
 			cb(null, user);			
 		}
