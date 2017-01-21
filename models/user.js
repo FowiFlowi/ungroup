@@ -23,7 +23,7 @@ let mongoose = require('mongoose'),
 	userModel = mongoose.model('User', User);
 
 User.methods.findOrCreate = function(userData, cb) {
-	this.model('User').findOne({ vkId: userData.vkId }, (err, obj) => {
+	this.model('User').findOne(userData.vkId, (err, obj) => {
 		if (err) {
 			logger.error(err);
 			cb(err);
@@ -41,7 +41,7 @@ User.methods.findOrCreate = function(userData, cb) {
 				photoUrl: 	  userData.photoUrl,
 				profileUrl:   userData.profileUrl
 			});
-			// user.save();
+			user.save();
 			logger.info('User ' + userData.username + ' has registered');
 			cb(null, user);			
 		}
