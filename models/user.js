@@ -6,19 +6,13 @@ let mongoose = require('mongoose'),
 			type: String,
 			unique: true,
 		},
-		groupNumber: {
-			type: Number,
-		},
 		vkId: {
 			type: Number,
 			unique: true
 		},
-		photoUrl: {
-			type: String
-		},
-		profileUrl: {
-			type: String
-		}
+		groupNumber: Number,
+		photoUrl: String,
+		profileUrl: String
 	}),
 	userModel = mongoose.model('User', User);
 
@@ -52,4 +46,5 @@ User.methods.findById = function(vkId, cb) {
 	return this.model('User').findOne({ vkId }, cb);
 }
 
-module.exports = userModel;
+// module.exports = userModel;
+module.exports = mongoose.model('User', User);
