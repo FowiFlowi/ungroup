@@ -3,7 +3,7 @@ let mongoose = require('mongoose'),
 	User = new Schema({
 		nickname: {
 			type: String,
-			unique: true,
+			unique: true
 		},
 		vkId: {
 			type: Number
