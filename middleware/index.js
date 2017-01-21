@@ -38,8 +38,8 @@ module.exports = function (app, express, server) {
 		})
 	}));
 	app.use((req, res, next) => {
-		console.log('BEFORE', req.query);
-		authStrategy(req);
+		req.session.query = req.query;
+		authStrategy(req.session);
 		next();
 	})
 	app.use(passport.initialize());

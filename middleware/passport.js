@@ -4,7 +4,7 @@ let passport = require('passport'),
 	logger = require('../utils/log')(module),
 	User = new require('../models/user');
 
-module.exports = function (req) {
+module.exports = function (session) {
 	passport.use('vk', new VkStrategy({
 
 		clientID: config.get('auth:vk:app_id'),
@@ -22,7 +22,7 @@ module.exports = function (req) {
 				return done(err);
 			}
 			if (!user) {
-				let query = req.query,
+				let query = session.query,
 					userData = {
 						vkId: profile.id,
 						nickname: query.nickname,
@@ -31,7 +31,7 @@ module.exports = function (req) {
 						photoUrl: profile.photos[0].value,
 						profileUrl: profile.profileUrl
 					};
-				console.log(query.nickname, '<<THERE!', req.query);
+				console.log(query.nickname, '<<THERE!', session.query);
 				user = new User(userData);
 				user.save((err) => {
 					if (err) 
