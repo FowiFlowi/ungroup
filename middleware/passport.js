@@ -38,8 +38,8 @@ module.exports = function (req) {
 		done(null, user.id);
 	});
 
-	passport.deserializeUser((id, done) => {
-		User.findById(id, (err, user) => {
+	passport.deserializeUser((user, done) => {
+		User.findById(user.vkId, (err, user) => {
 			done(err, user);
 		})
 		// try {									// ====> findById
