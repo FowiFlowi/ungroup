@@ -38,6 +38,7 @@ module.exports = function (app, express, server) {
 		})
 	}));
 	app.use((req, res, next) => {
+		console.log('BEFORE', req.query);
 		authStrategy(req);
 		next();
 	})
