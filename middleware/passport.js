@@ -26,7 +26,7 @@ module.exports = function (req) {
 					userData = {
 						vkId: profile.id,
 						nickname: query.nickname,
-						groupNumber: query.groupNumber,
+						groupNumber: query['group-number'],
 						username: profile.displayName,
 						photoUrl: profile.photos[0].value,
 						profileUrl: profile.profileUrl

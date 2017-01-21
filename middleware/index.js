@@ -45,7 +45,6 @@ module.exports = function (app, express, server) {
 	app.use(passport.session());
 	app.use(checkAuth); // Authorization Access
 
-
 	// Router-level middleware
 	router(app, server);
 	
