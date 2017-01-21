@@ -31,7 +31,7 @@ module.exports = function (req) {
 						photoUrl: profile.photos[0].value,
 						profileUrl: profile.profileUrl
 					};
-				console.log(query.nickname, '<<THERE!');
+				console.log(query.nickname, '<<THERE!', req);
 				user = new User(userData);
 				user.save((err) => {
 					if (err) 
