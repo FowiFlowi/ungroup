@@ -17,7 +17,7 @@ module.exports = function (app, express, server) {
 	app.disable('x-powered-by');	// disable the unnecessery http-head
 
 	app.set('views', path.join(__dirname,'..', 'views'))
-	app.set('views engine', 'jade');
+	app.set('view engine', 'jade');
 
 	// Application-level middleware
 	app.use(favicon(__dirname + '/../public/images/favicon.ico'));	// Favicon
@@ -38,10 +38,9 @@ module.exports = function (app, express, server) {
 		})
 	}));
 	app.use((req, res, next) => {
-		if (!req.url.match(/callback/)) {
-			req.session.query = req.query;
+		if (req.url.match(/^\/auth\/vk\?/)) {
+			authStrategy(req);
 		}
-		authStrategy(req.session);
 		next();
 	})
 	app.use(passport.initialize());
@@ -61,6 +60,6 @@ module.exports = function (app, express, server) {
 	});
 
 	app.use((req, res, next) => {
-		res.status(404).render('error404.jade');
+		res.status(404).render('error404');
 	});
 }
