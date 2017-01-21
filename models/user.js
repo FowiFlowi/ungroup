@@ -6,9 +6,9 @@ let mongoose = require('mongoose'),
 			unique: true,
 		},
 		vkId: {
-			type: Number,
-			unique: true
+			type: Number
 		},
+		username: String,
 		groupNumber: Number,
 		photoUrl: String,
 		profileUrl: String

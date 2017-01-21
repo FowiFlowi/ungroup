@@ -22,17 +22,21 @@ module.exports = function (req) {
 				return done(err);
 			}
 			if (!user) {
-				let userData = {
-					vkId: profile.id,
-					query: req.query,
-					username: profile.displayName,
-					photoUrl: profile.photos[0].value,
-					profileUrl: profile.profileUrl
-				};
+				let query = req.query,
+					userData = {
+						vkId: profile.id,
+						nickname: query.nickname,
+						groupNumber: query.groupNumber,
+						username: profile.displayName,
+						photoUrl: profile.photos[0].value,
+						profileUrl: profile.profileUrl
+					};
 				user = new User(userData);
 				user.save((err) => {
-					if (err) logger.error(err);
-					logger.info('New user ' + user.username + ' has auth');
+					if (err) 
+						logger.error(err);
+					else 
+						logger.info('New user ' + profile.displayName + ' has auth');
 					return done(err, user);
 				})
 			} else {
