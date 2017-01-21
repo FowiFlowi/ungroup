@@ -51,7 +51,6 @@ module.exports = function (app, express, server) {
 
 	// Router-level middleware
 	router(app, server);
-	
 
 	// Error-handing middleware
 	app.use((err, req, res, next) => {

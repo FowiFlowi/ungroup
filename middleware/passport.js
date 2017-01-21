@@ -41,7 +41,7 @@ module.exports = function (req) {
 					return done(err, user);
 				})
 			} else {
-				logger.info('User ' + user + ' logged on');
+				logger.info('User ' + user.nickname + ' logged on');
 				return done(err, user);
 			}
 		})
@@ -64,6 +64,7 @@ module.exports = function (req) {
 	});
 
 	passport.deserializeUser((user, done) => {
+		console.log(user, 'THERE');
 		User.findOne({ 'vkId': user.vkId }, (err, user) => {
 			done(err, user);
 		})
