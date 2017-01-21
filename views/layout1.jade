@@ -1,0 +1,119 @@
+doctype
+html
+	title= page
+	head
+		link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+		script(src='/bootstrap/js/bootstrap.js')
+		script(src='https://use.fontawesome.com/e6b8eb824d.js')
+		link(rel="shortcut icon" href="kv.ico")
+	style.
+
+		html
+			{
+				//- overflow-y:hidden;
+			}
+		.Menu
+			{
+				background-color:#CCCCCC;
+				transition:1s;
+			}
+		.Menu:hover
+			{
+				background-color:white;
+				transition:1s;
+			}
+		.Menu ul
+		{
+			list-style:none;
+			margin: 0px;
+			padding-bottom:15px;
+			padding-top:10px;
+			//- margin-bottom:20px;
+			padding-left: 10%;
+			
+		}
+		.Menu li
+		{
+			display:inline;
+			margin-right: 45px;
+		}
+		.Menu a
+		{
+			text-decoration:none;
+			font: 130% "Helvetica Neue","Open Sans",sans-serif;
+			color:#BBBBBB;
+			position:relative;
+			//padding-right:30px;
+			padding-bottom:5px;
+		}
+		#head
+			{
+				//position:fixed;
+				background-color:#ffffff;
+				margin-top:24px;
+				//- width:100%;
+				//margin-bottom:60%;
+			}
+			.Menu a::before
+			{
+				display:block;
+				position:absolute;
+				content:"";
+				height:2px;
+				width: 5;
+				background-color:#808080;
+				transition: width .5s ease-in-out, left .5s ease-in-out;
+				left:50%;
+				bottom:0;
+			}
+
+			.Menu a::after
+			{
+				display:block;
+				position:absolute;
+				content:"";
+				height: 2px;
+				width: 0;
+				background-color: #808080;
+				transition: width .5s ease-in-out;
+				left: 50%;
+				bottom: 0;
+			}
+		.Menu a:visited
+		{
+			color:#808080;
+		}
+
+		.Menu a:hover
+			{
+				color:#808080;
+			}
+		.Menu a:hover::before
+			{
+				width:50%;
+				left:0;
+				
+			}
+		.Menu a:hover::after
+		{
+			width:50%;
+		}
+		/*Modal Windows*/
+		
+		
+
+body
+	center
+		div(id="head")
+			div.Menu
+				ul
+					center
+						li: a(href='/home'): i(class='main glyphicon glyphicon-home')  Home
+						li: a(href='/list'): i(class='glyphicon glyphicon-list')  List
+						li: a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
+						//- li(class='auto'): a(href='/authorization'): i(class='glyphicon glyphicon-globe ')
+						//- li: a(class='btn btn-default signup ' href='/SignUp' data-targat="#basicModal" style="padding: 1px;margin-right: 1em;"): i(class='glyphicon glyphicon-user')  Sign Up
+						//- a.btn.btn-sm.btn-default.log(href='#', data-toggle='modal', data-target='#basicModal' style="padding: 1px;margin-right: 1em;"): i(class='glyphicon glyphicon-user') SignUp
+						//- a.btn.btn-sm.btn-default.log(href='#', data-toggle='modal', data-target='#secondModal' style="padding: 1px;margin-right: 1em;"): i(class='glyphicon glyphicon-user') LogIn
+	block content

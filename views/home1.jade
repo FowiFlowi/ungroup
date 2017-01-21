@@ -1,0 +1,97 @@
+extends layout
+block content
+	link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
+	
+	style.
+		html
+		{
+		 	background-color: black;
+		 	//- background-image: url(images/primat.jpg);	
+		}
+		body
+			{
+				background-color:black;
+			}
+		.rotate
+		{
+			transform:rotateZ(0deg);
+			transition:1s;
+		}
+		.rotate:hover
+		{
+			transform: rotateZ(30deg);
+			transition:1s;
+		}
+
+		img
+			{
+				display: relative;
+				max-width: 100%;
+				max-height: 100%;
+			}
+		.log
+		{
+			background-color:#CCCCCC;
+			transition:1s;
+		}
+		.log:hover
+		{
+			background-color:white !important;
+			transition:1s;
+		}
+		.modal-title
+		{
+			color:#3D4B8F;
+
+		}
+		
+	
+	body
+		div(class="rotate" style='position:absolute;top:10px;left:35px;'): a(href='https://vk.com/club_kv51'): img(src='images/KVlogo.png')
+		a.btn.btn-lg.btn-default.log(href='#', data-toggle='modal', data-target='#basicModal' style="padding: 1px;margin-right: 1em;float:right;margin-top: -2.1em;"): i(class='glyphicon glyphicon-user') SignUp
+		a.btn.btn-lg.btn-default.log(href='#', data-toggle='modal', data-target='#secondModal' style="padding: 1px;margin-right: 7em;float:right;margin-top: -2.1em;"): i(class='glyphicon glyphicon-user') LogIn
+		img.img-responsive(src='images/primat.jpg'  width="100%" height="100%")
+
+
+
+
+		//- Sign Up
+		#basicModal.modal.fade(tabindex='-1', role='dialog')
+			.modal-dialog
+				.modal-content
+					.modal-header
+						button.close(type='button', data-dismiss='modal') x
+						center
+							h2#myModalLabel.modal-title Sign Up
+					.modal-body
+						.input-group.input-group-md
+							span.input-group-addon Nickname
+							input.form-control(type='text', placeholder='Enter your nickname',required)
+					.modal-body
+						.input-group.input-group-md
+							span.input-group-addon Group number
+							input.form-control(type='text', placeholder='Enter your group number',required)
+
+					.modal-footer
+						//- button.btn.btn-default(type='button', data-dismiss='modal') Close
+						//- -----
+						//- button.btn.btn-primary(type='button'): i.fa.fa-vk.fa-lg(aria-hidden='true')   Sign Up with VK
+						form(action='/auth/vk'): button(type='submit') vk
+
+
+
+		//- Log In
+		#secondModal.modal.fade(tabindex='-1', role='dialog')
+			.modal-dialog
+				.modal-content
+					.modal-header
+						button.close(type='button', data-dismiss='modal') x
+						center
+							h2#myModalLabel.modal-title Log In
+					.modal-body
+							center
+								h2 If you don't have an account, you can <a href='#', data-toggle='modal', data-target='#basicModal' data-dismiss='modal'> <br> Sign Up
+								button.btn.btn-primary(type='button'): i.fa.fa-vk.fa-lg(aria-hidden='true')   Log In with VK
+					.modal-footer
+						//- button.btn.btn-default(type='button', data-dismiss='modal') Close
+		

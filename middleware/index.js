@@ -11,20 +11,24 @@ module.exports = function (app, express, server) {
 		logger = require('../utils/log')(module),
 		passport = require('passport'),
 		favicon = require('serve-favicon'),
-		checkAuth = require('./checkAuth');
-					require('./passport')(app);
+		checkAuth = require('./checkAuth'),
+		authStrategy = require('./passport');
 
-	app.disable('x-powered-by');									// disable the unnecessery http-head
+	app.disable('x-powered-by');	// disable the unnecessery http-head
 
 	app.set('views', path.join(__dirname,'..', 'views'))
 	app.set('views engine', 'jade');
 
 	// Application-level middleware
-	app.use(favicon(__dirname + '/../public/images/favicon.ico')); 	// Favicon
-	app.use((req, res, next) => {									// logging request
+	app.use(favicon(__dirname + '/../public/images/favicon.ico'));	// Favicon
+	app.use((req, res, next) => {	// logging request
 		logger.info(req.method, req.url);
 		next();
 	});
+	app.use((req, res, next) => {
+		authStrategy(req);
+		next();
+	})
 	app.use(express.static(path.join(__dirname, '..', 'public')));	// Public directory
 	app.use(bodyParser.json());
 	app.use(bodyParser.urlencoded({ extended: true }));

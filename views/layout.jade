@@ -30,7 +30,7 @@ html
 			padding-bottom:15px;
 			padding-top:10px;
 			//- margin-bottom:20px;
-			padding-left: 10%;
+			//- padding-left: 10%;
 			
 		}
 		.Menu li
@@ -99,6 +99,72 @@ html
 		{
 			width:50%;
 		}
+
+		@media screen and (max-width: 600px) 
+		{
+			.nav 
+			{
+				position: relative;
+				min-height: 40px;	
+			}	
+			.nav ul 
+			{
+				width: 180px;
+				padding: 5px 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border: solid 1px #aaa;
+				border-radius: 5px;
+				box-shadow: 0 1px 2px rgba(0,0,0,.3);
+			}
+			.nav li 
+			{
+				display: none; /* скрыть все <li> пункты */
+				margin: 0;
+			}
+			.nav .current 
+			{
+				display: block; /* показывать только текущие активные <li> пункты */
+			}
+			.nav a 
+			{
+				display: block;
+			}
+			/* адаптивное меню справа */
+			.nav.right ul 
+			{
+				left: auto;
+				right: 0;
+			}
+			.nav ul:hover 
+			{
+				background-image: none;
+			}
+			.nav ul:hover li {
+				display: block;
+				margin: 0 0 5px;
+			}
+
+			/* адаптивное меню справа */
+			.nav.right ul 
+			{
+				left: auto;
+				right: 0;
+			}
+
+			.nav ul 
+			{
+				background-color:#CCCCCC;
+				transition:1s;
+			}
+			.nav:hover ul
+			{
+				background-color:white;
+				transition:1s;
+			}
+	
+		}
 		/*Modal Windows*/
 		
 		
@@ -107,13 +173,19 @@ body
 	center
 		div(id="head")
 			div.Menu
-				ul
-					center
-						li: a(href='/home'): i(class='main glyphicon glyphicon-home')  Home
-						li: a(href='/list'): i(class='glyphicon glyphicon-list')  List
-						li: a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
-						//- li(class='auto'): a(href='/authorization'): i(class='glyphicon glyphicon-globe ')
-						//- li: a(class='btn btn-default signup ' href='/SignUp' data-targat="#basicModal" style="padding: 1px;margin-right: 1em;"): i(class='glyphicon glyphicon-user')  Sign Up
-						//- a.btn.btn-sm.btn-default.log(href='#', data-toggle='modal', data-target='#basicModal' style="padding: 1px;margin-right: 1em;"): i(class='glyphicon glyphicon-user') SignUp
-						//- a.btn.btn-sm.btn-default.log(href='#', data-toggle='modal', data-target='#secondModal' style="padding: 1px;margin-right: 1em;"): i(class='glyphicon glyphicon-user') LogIn
+				div.nav.right
+					ul
+						li.hidden-xs: a(href='/home'): i(class='main glyphicon glyphicon-home')  Home
+						li.hidden-xs: a(href='/list'): i(class='glyphicon glyphicon-list')  List
+						li.hidden-xs: a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
+						div.small.hidden-lg.hidden-md.hidden-sm
+							li.current: a(href='/home'): i(class='main glyphicon glyphicon-home')  Home
+							li: a(href='/list'): i(class='glyphicon glyphicon-list')  List
+							li: a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
+							center
+								li.hidden-lg.hidden-md.hidden-sm: a.btn.btn-lg.btn-default.log(href='#', data-toggle='modal', data-target='#basicModal' style="padding: 1px;font-size:1.2em;"): i(class='glyphicon glyphicon-user') SignUp
+								li.hidden-lg.hidden-md.hidden-sm: a.btn.btn-lg.btn-default.log(href='/auth/vk',style="padding: 1px;font-size:1.2em;"): i.fa.fa-vk.fa-lg(aria-hidden='true') SignUp
+							//- li.current.hidden-lg.hidden-md.hidden-sm: i(class='glyphicon glyphicon-send') Menu
+
+						
 	block content

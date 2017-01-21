@@ -2,6 +2,8 @@ let logger = require('../utils/log')(module),
 	auth = require('./auth');
 
 module.exports = function (app, server) {
+	auth(app);
+	
 	app.get('/', (req, res) => {
 		res.redirect('/home');
 	});
@@ -22,6 +24,4 @@ module.exports = function (app, server) {
 		let io = require('../utils/io')(server);
 		res.render('chat.jade', { page: 'Chat' });
 	});
-
-	auth(app);
 };

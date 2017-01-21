@@ -1,37 +1,51 @@
 let passport = require('passport'),
 	VkStrategy = require('passport-vkontakte').Strategy,
 	config = require('../config'),
-	logger = require('../utils/log')(module);
+	logger = require('../utils/log')(module),
+	User = new require('../models/user');
 
-passport.use('vk', new VkStrategy({
+module.exports = function (req) {
+	passport.use('vk', new VkStrategy({
 
-	clientID: config.get('auth:vk:app_id'),
-	clientSecret: config.get('auth:vk:secret'),
-	callbackURL: config.get('app:url') + '/auth/vk/callback'
+		clientID: config.get('auth:vk:app_id'),
+		clientSecret: config.get('auth:vk:secret'),
+		callbackURL: config.get('app:url') + '/auth/vk/callback'
 
-}, (accessToken, refreshToken, profile, done) => {
+	}, (accessToken, refreshToken, profile, done) => {
 
-	logger.info('vk auth: ' + profile.displayName);
-	
-	return done(null, {
-		username: profile.displayName,
-		photoUrl: profile.photos[0].value,
-		profileUrl: profile.profileUrl
+		logger.info('vk auth: ' + profile.displayName);
+		let userData = {
+			vkId: profile.id,
+			query: req.query,
+			username: profile.displayName,
+			photoUrl: profile.photos[0].value,
+			profileUrl: profile.profileUrl
+		};
+
+		User.findOrCreate(userData, (err, user) => {
+			done(err, user);
+		});
+
+		// done(null, {								// ===> findOrCreate
+		// 	username: profile.displayName,
+		// 	photoUrl: profile.photos[0].value,
+		// 	profileUrl: profile.profileUrl
+		// });
+
+	}));
+
+	passport.serializeUser((user, done) => {
+		done(null, user.id);
 	});
 
-}));
-
-passport.serializeUser((user, done) => {
-	done(null, JSON.stringify(user));
-});
-
-passport.deserializeUser((data, done) => {
-	try {
-		done(null, JSON.parse(data));
-	} catch(err) {
-		done(err);
-	}
-});
-
-module.exports = function (app) {
+	passport.deserializeUser((id, done) => {
+		User.findById(id, (err, user) => {
+			done(err, user);
+		})
+		// try {									// ====> findById
+		// 	done(null, id);
+		// } catch(err) {
+		// 	done(err);
+		// }
+	});
 };
