@@ -38,7 +38,9 @@ module.exports = function (app, express, server) {
 		})
 	}));
 	app.use((req, res, next) => {
-		req.session.query = req.query;
+		if (!req.url.match(/callback/)) {
+			req.session.query = req.query;
+		}
 		authStrategy(req.session);
 		next();
 	})
