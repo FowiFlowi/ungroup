@@ -64,7 +64,6 @@ module.exports = function (req) {
 	});
 
 	passport.deserializeUser((vkId, done) => {
-		console.log(user, 'THERE');
 		User.findOne({ vkId }, (err, user) => {
 			done(err, user);
 		})
