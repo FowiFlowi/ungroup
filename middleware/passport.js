@@ -60,7 +60,7 @@ module.exports = function (req) {
 	}));
 
 	passport.serializeUser((user, done) => {
-		done(null, user.id);
+		done(null, user);
 	});
 
 	passport.deserializeUser((user, done) => {
