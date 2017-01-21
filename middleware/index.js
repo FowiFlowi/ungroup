@@ -25,10 +25,6 @@ module.exports = function (app, express, server) {
 		logger.info(req.method, req.url);
 		next();
 	});
-	app.use((req, res, next) => {
-		authStrategy(req);
-		next();
-	})
 	app.use(express.static(path.join(__dirname, '..', 'public')));	// Public directory
 	app.use(bodyParser.json());
 	app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,6 +37,10 @@ module.exports = function (app, express, server) {
 			mongooseConnection: mongoCon.connection
 		})
 	}));
+	app.use((req, res, next) => {
+		authStrategy(req);
+		next();
+	})
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.use(checkAuth); // Authorization Access
