@@ -21,7 +21,6 @@ module.exports = function (req) {
 				logger.error(err);
 				return done(err);
 			}
-			logger.info('WTF.............?')
 			if (!user) {
 				let userData = {
 					vkId: profile.id,
@@ -37,7 +36,7 @@ module.exports = function (req) {
 					return done(err, user);
 				})
 			} else {
-				logger.info('User ' + user.username + ' logged on');
+				logger.info('User ' + user + ' logged on');
 				return done(err, user);
 			}
 		})
