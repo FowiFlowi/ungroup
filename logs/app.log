@@ -1342,3 +1342,11 @@
 {"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-21T11:24:58.860Z"}
 {"level":"info","message":"GET /bootstrap/fonts/glyphicons-halflings-regular.woff2","timestamp":"2017-01-21T11:24:58.866Z"}
 {"level":"info","message":"GET /auth/vk","timestamp":"2017-01-21T11:27:02.707Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-21T11:37:58.022Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-21T11:37:59.645Z"}
+{"level":"info","message":"GET /","timestamp":"2017-01-21T11:38:00.985Z"}
+{"level":"info","message":"GET /home","timestamp":"2017-01-21T11:38:02.082Z"}
+{"level":"info","message":"GET /bootstrap/css/bootstrap.css","timestamp":"2017-01-21T11:38:04.800Z"}
+{"level":"info","message":"GET /bootstrap/js/bootstrap.js","timestamp":"2017-01-21T11:38:04.847Z"}
+{"level":"info","message":"GET /images/KVlogo.png","timestamp":"2017-01-21T11:38:05.627Z"}
+{"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-21T11:38:05.657Z"}

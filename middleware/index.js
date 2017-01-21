@@ -51,14 +51,14 @@ module.exports = function (app, express, server) {
 	
 
 	// Error-handing middleware
-	app.use((err, req, res, next) => {
-		if (~err.message.indexOf('not found'))
-			return next();
-		logger.error(err.stack);
-		res.status(500);
-	});
+	// app.use((err, req, res, next) => {
+	// 	if (~err.message.indexOf('not found'))
+	// 		return next();
+	// 	logger.error(err.stack);
+	// 	res.status(500);
+	// });
 
-	app.use((req, res, next) => {
-		res.status(404).render('error404.jade');
-	});
+	// app.use((req, res, next) => {
+	// 	res.status(404).render('error404.jade');
+	// });
 }
