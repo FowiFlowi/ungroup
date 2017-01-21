@@ -41,7 +41,8 @@ module.exports = function (app, express, server) {
 		console.log(req.session.passport.user);
 		if (req.url.match(/^\/auth\/vk\?/)) {
 			authStrategy(req);
-		}
+		} else 
+			authStrategy();
 		next();
 	})
 	app.use(passport.initialize());
