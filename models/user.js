@@ -19,7 +19,8 @@ let mongoose = require('mongoose'),
 		profileUrl: {
 			type: String
 		}
-	});
+	}),
+	userModel = mongoose.model('User', User);
 
 User.methods.findOrCreate = function(userData, cb) {
 	this.model('User').findOne({ vkId: userData.vkId }, (err, obj) => {
@@ -32,7 +33,7 @@ User.methods.findOrCreate = function(userData, cb) {
 			cb(null, obj);
 
 		} else if (!obj) {
-			let user = new User({
+			let user = new userModel({
 				nickname: 	  userData.query.nickname,
 				groupNumber:  userData.query.groupNumber,
 				vkId: 		  userData.vkId,
@@ -51,4 +52,4 @@ User.methods.findById = function(vkId, cb) {
 	return this.model('User').findOne({ vkId }, cb);
 }
 
-module.exports = mongoose.model('User', User);
+module.exports = userModel;
