@@ -23,7 +23,6 @@ module.exports = function (app, express, server) {
 	app.use(favicon(__dirname + '/../public/images/favicon.ico'));	// Favicon
 	app.use((req, res, next) => {	// logging request
 		logger.info(req.method, req.url);
-		console.log(req.session.passport.user);
 		next();
 	});
 	app.use(express.static(path.join(__dirname, '..', 'public')));	// Public directory
@@ -39,6 +38,7 @@ module.exports = function (app, express, server) {
 		})
 	}));
 	app.use((req, res, next) => {
+		console.log(req.session.passport.user);
 		if (req.url.match(/^\/auth\/vk\?/)) {
 			authStrategy(req);
 		}
