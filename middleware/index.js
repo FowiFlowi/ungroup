@@ -38,11 +38,11 @@ module.exports = function (app, express, server) {
 		})
 	}));
 	app.use((req, res, next) => {
-		console.log(req.session.passport.user);
+		console.log(req.session);
 		if (req.url.match(/^\/auth\/vk\?/)) {
-			authStrategy(req);
-		} else 
-			authStrategy();
+			req.session.query = req.query;
+		};
+		authStrategy(req.session);
 		next();
 	})
 	app.use(passport.initialize());
