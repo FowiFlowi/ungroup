@@ -5,18 +5,18 @@ module.exports = function (app, server) {
 	auth(app);
 	
 	app.get('/', (req, res) => {
-		res.redirect('/home', {pageData: { 'user': req.user }});
+		res.redirect('/home', { user: req.user });
 	});
 
 	app.get('/home', (req, res) => {
-		res.render('home', { page: 'Home', 'user': req.user });
+		res.render('home', { page: 'Home', user: req.user });
 	});
 
 	app.get('/list', (req, res) => {
 		let studentList = new require('../models/studentList')();
 		studentList.getAll((err, list) => {
 			if (err) logger.error(err)
-			else res.render('list', { page: 'List', 'user': req.user, list });
+			else res.render('list', { page: 'List', user: req.user, list });
 		});
 	});
 
