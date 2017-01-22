@@ -14,8 +14,6 @@ module.exports = function (app, express, server, http) {
 		checkAuth = require('./checkAuth'),
 		authStrategy = require('./passport');
 
-	app.disable('x-powered-by');	// disable the unnecessery http-head
-
 	app.set('views', path.join(__dirname,'..', 'views'))
 	app.set('view engine', 'jade');
 
@@ -25,7 +23,7 @@ module.exports = function (app, express, server, http) {
 		logger.info(req.method, req.url);
 		next();
 	});
-	app.use(express.static(path.join(__dirname, '..', 'public')));	// Public directory
+	app.use(express.static(__dirname + '/../public'));	// Public directory
 	app.use(bodyParser.json());
 	app.use(bodyParser.urlencoded({ extended: true }));
 	app.use(cookieParser());
@@ -46,7 +44,7 @@ module.exports = function (app, express, server, http) {
 	})
 	app.use(passport.initialize());
 	app.use(passport.session());
-	app.use(checkAuth); // Authorization Access
+	app.use(checkAuth);	// Authorization Access
 
 	// Router-level middleware
 	router(app, server, http);

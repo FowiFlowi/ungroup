@@ -8,7 +8,7 @@ module.exports = function (server, user) {
 	io.on('connection', (socket) => {
 		let time = (new Date).toLocaleTimeString(),
 			name = user.nickname;
-		logger.info('New user connected: ' + name);
+		logger.info('CHAT: New user connected: ' + name);
 		clients[socket.id] = socket;
 
 		socket.emit('connected', { name, time });
@@ -25,7 +25,7 @@ module.exports = function (server, user) {
 			delete clients[socket.id];
 			let time = (new Date).toLocaleTimeString();
 			socket.broadcast.emit('userSplit', { name, time });
-			logger.info('User disconnected: ' + ID);
+			logger.info('CHAT: User disconnected: ' + name);
 		})
 	});
 }
