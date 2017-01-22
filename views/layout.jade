@@ -1,6 +1,10 @@
 doctype
 html
+	- var page;
+	- if (user == undefined) page = 'Home'
+	- else page = user.username
 	title= page
+
 	head
 		link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')

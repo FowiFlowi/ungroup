@@ -38,7 +38,6 @@ module.exports = function (app, express, server) {
 		})
 	}));
 	app.use((req, res, next) => {
-		console.log(req.session);
 		if (req.url.match(/^\/auth\/vk\?/)) {
 			req.session.query = req.query;
 		};
