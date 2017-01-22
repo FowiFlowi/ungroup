@@ -1,5 +1,13 @@
 let logger = require('../utils/log')(module),
-	auth = require('./auth');
+	auth = require('./auth'),
+	testUser = {
+		nickname: 'kekos',
+		vkId: 1234,
+		username: 'Ya kek',
+		groupNumber: 51,
+		photoUrl: 'kakoe-to',
+		profileUrl: 'tozhe hz'
+	}
 
 module.exports = function (app, server) {
 	auth(app);
@@ -24,4 +32,8 @@ module.exports = function (app, server) {
 		let io = require('../utils/io')(server);
 		res.render('chat', { page: 'Chat', user: req.user });
 	});
+
+	app.get('/schedule', (req, res) => {
+		res.render('schedule');
+	})
 };
