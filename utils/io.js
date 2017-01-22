@@ -8,7 +8,7 @@ module.exports = function (server, user) {
 	io.on('connection', (socket) => {
 		let time = (new Date).toLocaleTimeString(),
 			name = user.nickname;
-		logger.info('New user connected: ' + ID);
+		logger.info('New user connected: ' + name);
 		clients[socket.id] = socket;
 
 		socket.emit('connected', { name, time });
