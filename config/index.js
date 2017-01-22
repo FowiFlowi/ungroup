@@ -1,8 +1,7 @@
-let nconf = require('nconf'),
-	path = require('path');
+let nconf = require('nconf');
 
 nconf.argv()
 	.env()
-	.file({file: path.join(__dirname + 'config.json')});
+	.file({file: __dirname + '/config.json'});
 
 module.exports = nconf;
