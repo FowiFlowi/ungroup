@@ -1,19 +1,11 @@
 let logger = require('../utils/log')(module),
-	auth = require('./auth'),
-	testUser = {
-		nickname: 'kekos',
-		vkId: 1234,
-		username: 'Ya kek',
-		groupNumber: 51,
-		photoUrl: 'kakoe-to',
-		profileUrl: 'tozhe hz'
-	}
+	auth = require('./auth');
 
-module.exports = function (app, server) {
+module.exports = function (app, server, http) {
 	auth(app);
 	
 	app.get('/', (req, res) => {
-		res.redirect('/home', { user: req.user });
+		res.status(200).redirect('/home');
 	});
 
 	app.get('/home', (req, res) => {
@@ -29,11 +21,17 @@ module.exports = function (app, server) {
 	});
 
 	app.get('/chat', (req, res) => {
-		let io = require('../utils/io')(server);
+		let io = require('../utils/io')(server, req.user);
 		res.render('chat', { page: 'Chat', user: req.user });
 	});
 
 	app.get('/schedule', (req, res) => {
-		res.render('schedule');
+		let scheduleModel = require('../models/schedule')(http, req.user, req.query),
+			options = scheduleModel.options,
+			getScheduleJSON = scheduleModel.getScheduleJSON;
+
+		getScheduleJSON(options, (schedule) => {
+			res.render('schedule', { schedule });
+		})
 	})
 };

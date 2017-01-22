@@ -1,5 +1,6 @@
 let mongoose = require('../utils/mongoose'),
 	Schema = mongoose.Schema,
+	
 	User = new Schema({
 		nickname: {
 			type: String,

@@ -1,4 +1,4 @@
-module.exports = function (app, express, server) {
+module.exports = function (app, express, server, http) {
 	let path = require('path'),
 		mongoose = require('mongoose'),
 		router = require('../routes'),
@@ -46,10 +46,10 @@ module.exports = function (app, express, server) {
 	})
 	app.use(passport.initialize());
 	app.use(passport.session());
-	app.use(checkAuth); // Authorization Access
+	// app.use(checkAuth); // Authorization Access
 
 	// Router-level middleware
-	router(app, server);
+	router(app, server, http);
 
 	// Error-handing middleware
 	app.use((err, req, res, next) => {
