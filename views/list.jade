@@ -8,6 +8,7 @@ block content
 				th Фамилия
 				th VK
 		tbody
+			- let list = group.list
 			each student in list
 				tr
 					- if (student.num == 16)

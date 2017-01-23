@@ -1769,3 +1769,5 @@
 {"level":"info","message":"GET /images/primat.jpg","timestamp":"2017-01-23T19:27:38.698Z"}
 {"level":"info","message":"GET /bootstrap/fonts/glyphicons-halflings-regular.woff2","timestamp":"2017-01-23T19:27:38.706Z"}
 {"level":"info","message":"GET /kv.ico","timestamp":"2017-01-23T19:27:38.807Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-23T20:27:53.861Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-23T20:27:56.075Z"}

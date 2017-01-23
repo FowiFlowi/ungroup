@@ -15,10 +15,12 @@ module.exports = function (app, server, http) {
 	app.get('/list', (req, res) => {
 		let studentList = require('../models/studentList'),
 			name;
+
 		req.query.group ? name = req.query.group : name = req.user.group
+
 		studentList.findOne({ name }, (err, group) => {
 			err ? logger.error(err) 
-				: res.render('list', { page: 'List', user: req.user, list: group.list, listName: name });
+				: res.render('list', { page: 'List', user: req.user, group });
 		});
 	});
 
