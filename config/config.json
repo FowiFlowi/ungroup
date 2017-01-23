@@ -1,16 +1,19 @@
 {
 	"port": 3000,
+	"app": {
+		"url": "https://kvgroup.herokuapp.com"
+	},
+	"auth": {
+		"vk": {
+			"app_id": 5813491,
+			"secret": "hdY5uLv7fAerBEpyoIK4"
+		}
+	},
 	"db": {
 		"connection": "mongodb://fowi:kekos@ds135798.mlab.com:35798",
 		"name": "kv51group"
 	},
 	"session": {
-		"secret": "secret_key",
-		"key": "kek",
-		"cookie": {
-			"path": "/",
-			"httpOnly": true,
-			"magAge": null
-		}
+		"secret": "I want to die"
 	}
 }
