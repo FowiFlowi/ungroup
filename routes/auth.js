@@ -1,7 +1,7 @@
 let passport = require('passport');
 
 module.exports = function (app) {
-	app.get('/sigh-out', (req, res) => {
+	app.get('/sign-out', (req, res) => {
 		req.logout();
 		res.redirect('/home');
 	});
