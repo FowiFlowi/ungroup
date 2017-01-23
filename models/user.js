@@ -6,14 +6,12 @@ let mongoose = require('../utils/mongoose'),
 			type: String,
 			unique: true
 		},
-		vkId: {
-			type: Number
-		},
+		vkId: Number,
 		username: String,
-		groupNumber: Number,
+		group: String,
 		photoUrl: String,
 		profileUrl: String
 	}),
-	userModel = mongoose.model('User', User);
+	UserModel = mongoose.model('User', User);
 
-module.exports = userModel;
+module.exports = UserModel;

@@ -23,7 +23,7 @@ module.exports = function (session) {
 					userData = {
 						vkId: profile.id,
 						nickname: query.nickname,
-						groupNumber: query['group-number'],
+						group: query.group,
 						username: profile.displayName,
 						photoUrl: profile.photos[0].value,
 						profileUrl: profile.profileUrl

@@ -1,16 +1,30 @@
 let mongoose = require('../utils/mongoose'),
 	Schema = mongoose.Schema,
 
-	Student = new Schema({
-		num: Number,
+	Group = new Schema({
 		name: String,
-		surname: String,
-		vkref: String
-	});
+		amount: Number,
+		list: []
+	}),
+
+	GroupModel = mongoose.model('Group', Group);
+
+	// Student = new Schema({
+	// 	num: Number,
+	// 	name: String,
+	// 	surname: String,
+	// 	vkref: String
+	// })
+
+	// studentGroup = new Schema({
+	// 	name: String,
+	// 	length: Number,
+	// 	students: [Student]
+	// })
 
 
-Student.methods.getAll = function (cb) {
-	return this.model('Student').find(cb);
-}
+// Student.methods.getAll = function (cb) {
+// 	return this.model('Student').find(cb);
+// }
 
-module.exports = mongoose.model('Student', Student);
+module.exports = GroupModel;

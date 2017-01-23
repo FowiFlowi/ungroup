@@ -13,10 +13,12 @@ module.exports = function (app, server, http) {
 	});
 
 	app.get('/list', (req, res) => {
-		let studentList = new require('../models/studentList')();
-		studentList.getAll((err, list) => {
-			if (err) logger.error(err)
-			else res.render('list', { page: 'List', user: req.user, list });
+		let studentList = require('../models/studentList'),
+			name;
+		req.query ? name = req.query.group : name = req.user.group
+		studentList.findOne({ name: 'КВ-51' }, (err, group) => {
+			err ? logger.error(err) 
+				: res.render('list', { page: 'List', user: req.user, list: group.list, listName: name });
 		});
 	});
 
@@ -25,13 +27,17 @@ module.exports = function (app, server, http) {
 		res.render('chat', { page: 'Chat', user: req.user });
 	});
 
+	app.get('/user', (req, res) => {
+		res.render('user', { page: req.user.nickname, user: req.user })
+	});
+
 	app.get('/schedule', (req, res) => {
 		let scheduleModel = require('../models/schedule')(http, req.user, req.query),
 			options = scheduleModel.options,
-			getScheduleJSON = scheduleModel.getScheduleJSON;
+			getSchedule = scheduleModel.getScheduleJSON;
 
-		getScheduleJSON(options, (schedule) => {
+		getSchedule(options, (schedule) => {
 			res.render('schedule', { page: 'Schedule', user: req.user, schedule });
-		})
-	})
+		});
+	});
 };
