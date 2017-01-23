@@ -1,13 +1,14 @@
 doctype
 html
 	title= page
-
 	head
+		<meta name=viewport content="width=device-width, initial-scale=1">
 		link(rel='stylesheet' href='/bootstrap/css/bootstrap.css')
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
 		script(src='/bootstrap/js/bootstrap.js')
 		script(src='https://use.fontawesome.com/e6b8eb824d.js')
 		link(rel="shortcut icon" href="kv.ico")
+		script(src='/socket.io/socket.io.js')
 	style.
 
 		html
@@ -100,8 +101,50 @@ html
 		{
 			width:50%;
 		}
+		.fa
+		{
+			font-size:0.7em;
+			padding-right:5px;
+		}
+		.fa-user-circle
+		{
+			font-size:0.7em;
+			padding-right:5px;
+		}
+		.fa-vk:before
+		{
+			padding-right:5px;
+			font-size: 1.6em;
+		}
+		.fa-user-circle:before
+		{
+			padding-right:5px;
+			font-size: 1.6em;
+		}
 
-		@media screen and (max-width: 600px) 
+		.logup
+		{
+			background-color:#31ABED;
+			transition:1s;
+			border:none;
+		}
+		.logup:hover
+		{
+			background-color:white !important;
+			transition:1s;
+		}
+		.login
+		{
+			background-color:red;
+			transition:1s;
+			border:none;
+		}
+		.logup:hover
+		{
+			background-color:white !important;
+			transition:1s;
+		}
+		@media screen and (max-width: 750px) 
 		{
 			.nav 
 			{
@@ -176,17 +219,29 @@ body
 			div.Menu
 				div.nav.right
 					ul
-						li.hidden-xs: a(href='/home'): i(class='main glyphicon glyphicon-home')  Home
-						li.hidden-xs: a(href='/list'): i(class='glyphicon glyphicon-list')  List
-						li.hidden-xs: a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
-						div.small.hidden-lg.hidden-md.hidden-sm
-							li.current: a(href='/home'): i(class='main glyphicon glyphicon-home')  Home
-							li: a(href='/list'): i(class='glyphicon glyphicon-list')  List
-							li: a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
-							center
-								li.hidden-lg.hidden-md.hidden-sm: a.btn.btn-lg.btn-default.log(href='#', data-toggle='modal', data-target='#basicModal' style="padding: 1px;font-size:1.2em;"): i(class='glyphicon glyphicon-user') SignUp
-								li.hidden-lg.hidden-md.hidden-sm: a.btn.btn-lg.btn-default.log(href='/auth/vk',style="padding: 1px;font-size:1.2em;"): i.fa.fa-vk.fa-lg(aria-hidden='true') SignUp
-							//- li.current.hidden-lg.hidden-md.hidden-sm: i(class='glyphicon glyphicon-send') Menu
-
-						
+						//sm/xs screen
+						li.hidden-xs.hidden-sm: a(href='/home'): i(class='main glyphicon glyphicon-home')  Home
+						li.hidden-xs.hidden-sm: a(href='/list'): i(class='glyphicon glyphicon-list-alt')  List
+						li.hidden-xs.hidden-sm: a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
+						-if(user == null) //if user is  NOT registered
+							div.small.hidden-lg.hidden-md
+								li.current: a.hidden-sm(href='#'): i(class='glyphicon glyphicon-list')  MENU
+								li: a(href='/home'): i(class='main glyphicon glyphicon-home')  Home
+								li: a(href='/list'): i(class='glyphicon glyphicon-list-alt')  List
+								li(data-toggle="tooltip" data-placement="top" title="Not recommended on small screens and extra small screens"): a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
+								center
+									li.hidden-lg.hidden-md: a.btn.btn-lg.btn-default.logup(href='#', data-toggle='modal', data-target='#basicModal' style="padding: 1px;"): i(class='glyphicon glyphicon-user') SIGNUP
+									li.hidden-lg.hidden-md: a.btn.btn-lg.btn-default.login(href='/auth/vk',style="padding: 1px;"): i.fa.fa-vk.fa-lg(aria-hidden='true') LOGIN
+						-else 
+							-if(user != null)   //if user is REGISTERED
+								-let nickname = user.nickname
+									div.small.hidden-lg.hidden-md
+										li.current: a.hidden-sm(href='#'): i(class='glyphicon glyphicon-list')  MENU
+										li: a(href='/home'): i(class='main glyphicon glyphicon-home')  Home
+										li: a(href='/list'): i(class='glyphicon glyphicon-list-alt')  List
+										li(data-toggle="tooltip" data-placement="top" title="Not recommended on small screens and extra small screens"): a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
+										center
+											li.hidden-lg.hidden-md: a.btn.btn-lg.btn-default.log(href='#', data-toggle='modal', data-target='#basicModal' style="padding: 1px;"): i(class='glyphicon glyphicon-user') #{nickname} 
+											li.hidden-lg.hidden-md: a.btn.btn-lg.btn-default.log(href='#',style="padding: 1px;"): i(class='glyphicon glyphicon-share-alt') LogOut			
 	block content
+

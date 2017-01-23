@@ -7,8 +7,6 @@ let http = require('http'),
 	logger = require('./utils/log')(module),
 	PORT = process.env.PORT || config.get('port');
 
-console.log(PORT, config);
 server.listen(PORT, () => {
-	console.log(PORT);
 	logger.info('Express server is listening on port ' + PORT);
 });

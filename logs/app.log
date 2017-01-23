@@ -1576,3 +1576,6 @@
 {"level":"info","message":"GET /bootstrap/fonts/glyphicons-halflings-regular.woff2","timestamp":"2017-01-22T18:44:55.208Z"}
 {"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-22T23:02:09.455Z"}
 {"level":"info","message":"Connected to database","timestamp":"2017-01-22T23:02:11.153Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-22T23:17:45.106Z"}
+{"level":"info","message":"Connected to database","timestamp":"2017-01-22T23:17:46.919Z"}
+{"level":"info","message":"Express server is listening on port 3000","timestamp":"2017-01-22T23:19:23.320Z"}

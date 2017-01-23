@@ -31,7 +31,7 @@ module.exports = function (app, server, http) {
 			getScheduleJSON = scheduleModel.getScheduleJSON;
 
 		getScheduleJSON(options, (schedule) => {
-			res.render('schedule', { page: 'Schedule', schedule });
+			res.render('schedule', { page: 'Schedule', user: req.user, schedule });
 		})
 	})
 };
