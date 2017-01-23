@@ -105,7 +105,7 @@ block content
 			-let userfoto = user.photoUrl
 			-if(nickname) //if user is registered
 				.registered
-					a.btn.btn-lg.btn-default.log.hidden-xs.hidden-sm(href='#',style="padding: 1px;margin-right: 1em;float:right;margin-top: -2.0em;"): i(class='fa fa-sign-out') LOG OUT
+					a.btn.btn-lg.btn-default.log.hidden-xs.hidden-sm(href='/sign-out',style="padding: 1px;margin-right: 1em;float:right;margin-top: -2.0em;"): i(class='fa fa-sign-out') LOG OUT
 					//- user avatar
 					img.img-responsive.img-circle.hidden-xs.hidden-sm(src="#{userfoto}" width="50" style="padding: 1px;margin-right: 13em;float:right;margin-top: -2.9em;") 
 					a.btn.btn-lg.btn-default.log.hidden-xs.hidden-sm(href='#', style="padding: 1px;margin-right: -5.8em;float:right;margin-top: -2.0em;") #{nickname} 	<!--page user(in the process)-->

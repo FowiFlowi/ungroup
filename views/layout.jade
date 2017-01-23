@@ -240,7 +240,7 @@ body
 										li: a(href='/list'): i(class='glyphicon glyphicon-list-alt')  List
 										li(data-toggle="tooltip" data-placement="top" title="Not recommended on small screens and extra small screens"): a(href='/chat'): i(class='glyphicon glyphicon-send')  Chat
 										center
-											li.hidden-lg.hidden-md: a.btn.btn-lg.btn-default.log(href='/sign-out', data-toggle='modal', data-target='#basicModal' style="padding: 1px;"): i(class='glyphicon glyphicon-user') #{nickname} 
-											li.hidden-lg.hidden-md: a.btn.btn-lg.btn-default.log(href='sign-out',style="padding: 1px;"): i(class='glyphicon glyphicon-share-alt') LogOut			
+											li.hidden-lg.hidden-md: a.btn.btn-lg.btn-default.log(href='#', data-toggle='modal', data-target='#basicModal' style="padding: 1px;"): i(class='glyphicon glyphicon-user') #{nickname} 
+											li.hidden-lg.hidden-md: a.btn.btn-lg.btn-default.log(href='#',style="padding: 1px;"): i(class='glyphicon glyphicon-share-alt') LogOut			
 	block content
 
