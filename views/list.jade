@@ -11,11 +11,8 @@ block content
 			- let list = group.list
 			each student in list
 				tr
-					- if (student.num == 16)
-						td #{student.num} 
-							i(class='glyphicon glyphicon-heart')
-					- else
-						td #{student.num}
+					
+					td #{student.num}
 					td #{student.name}
 					td #{student.surname}
 					td: a(href='#{student.vkref}')
