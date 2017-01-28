@@ -1,31 +1,40 @@
 let logger = require('../utils/log')(module),
 	request = require('request'),
-	obj;
+	host = 'https://api.rozklad.hub.kpi.ua',
+	searchName = '';
 
 module.exports = function(user, query) {
-	let url = 'https://api.rozklad.hub.kpi.ua';
+	query.group ? searchName = query.group : searchName = user.group.toLowerCase(); 
 
-	if (query.group) {
-		if (query.group == 51)
-			url += '/groups/580/timetable/';
-		if (query.group == 52)
-			url += '/groups/583/timetable/';
-		if (query.group == 53)
-			url += '/groups/585/timetable/';
-	} else {
-		if (user.group == 'КВ-51')
-			url += '/groups/580/timetable/';
-		if (user.group == 'КВ-52')
-			url += '/groups/583/timetable/';
-		if (user.group == 'КВ-53')
-			url += '/groups/585/timetable/';
-	};
+	return function(cb) {
+		function callback(err, res, body) {
+			if (err) logger.error(err);
+			else {
+				body = JSON.parse(body);
+				groupsArray = body.results;
 
-	return function (cb) {
-		request(url, (err, res, body) => {
-			if (err) return cb(err);
-			res.statusCode == 200 ? obj = JSON.parse(body) : logger.info('Fail: ' + res.statusCode)
-			return cb(null, obj)
-		});
-	};
+				for (let i = 0; i < groupsArray.length; i++) {
+					let group = groupsArray[i];
+					if (group.name == searchName) {
+						getSchedule(group.id, cb);
+						return;
+					}
+				}
+				if (body.next != null) request(body.next, callback)
+				else return cb(new Error('Group not found'));
+			}
+		}
+
+		request('https://api.rozklad.hub.kpi.ua/groups/?limit=100', callback);
+	}
 };
+
+function getSchedule(id, cb) {
+	request('https://api.rozklad.hub.kpi.ua/groups/' + id + '/timetable/', (err, res, body) => {
+		if (err) cb(err);
+		else {
+			body = JSON.parse(body);
+			res.statusCode == 200 ? cb(null, body) : cb(res.statusCode);
+		}
+	})
+}

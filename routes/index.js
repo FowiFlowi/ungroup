@@ -12,6 +12,15 @@ module.exports = function (app, server) {
 		res.render('home', { page: 'Home', user: req.user });
 	});
 
+	app.get('/chat', (req, res) => {
+		let io = require('../utils/io')(server, req.user);
+		res.render('chat', { page: 'Chat', user: req.user });
+	});
+
+	app.get('/user', (req, res) => {
+		res.render('user', { page: req.user.nickname, user: req.user })
+	});
+
 	app.get('/list', (req, res) => {
 		let studentList = require('../models/studentList'),
 			name;
@@ -24,18 +33,8 @@ module.exports = function (app, server) {
 		});
 	});
 
-	app.get('/chat', (req, res) => {
-		let io = require('../utils/io')(server, req.user);
-		res.render('chat', { page: 'Chat', user: req.user });
-	});
-
-	app.get('/user', (req, res) => {
-		res.render('user', { page: req.user.nickname, user: req.user })
-	});
-
 	app.get('/schedule', (req, res) => {
 		let getSchedule = require('../models/schedule')(req.user, req.query);
-
 		getSchedule((err, schedule) => {
 			err ? logger.error(err) : res.render('schedule', { page: 'Schedule', user: req.user, schedule });
 		})
