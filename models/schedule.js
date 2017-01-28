@@ -21,7 +21,7 @@ module.exports = function(user, query) {
 					}
 				}
 				if (body.next != null) request(body.next, callback)
-				else return cb(new Error('Group not found'));
+				else return cb();
 			}
 		}
 
