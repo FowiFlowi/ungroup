@@ -4,7 +4,7 @@ let logger = require('../utils/log')(module),
 
 module.exports = function(user, query) {
 	let url = 'https://api.rozklad.hub.kpi.ua';
-
+	console.log(user.group);
 	if (query) {
 		if (query.group == 51)
 			url += '/groups/580/timetable/';
