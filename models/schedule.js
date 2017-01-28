@@ -2,7 +2,7 @@ let logger = require('../utils/log')(module),
 	request = require('request'),
 	obj;
 
-module.exports = function(http, user, query) {
+module.exports = function(user, query) {
 	let url = 'https://api.rozklad.hub.kpi.ua';
 
 	if (query) {

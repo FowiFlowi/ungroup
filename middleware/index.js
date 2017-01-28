@@ -1,4 +1,4 @@
-module.exports = function (app, express, server, http) {
+module.exports = function (app, express, server) {
 	let path = require('path'),
 		mongoose = require('mongoose'),
 		router = require('../routes'),
@@ -47,7 +47,7 @@ module.exports = function (app, express, server, http) {
 	app.use(checkAuth);	// Authorization Access
 
 	// Router-level middleware
-	router(app, server, http);
+	router(app, server);
 
 	// Error-handing middleware
 	app.use((err, req, res, next) => {

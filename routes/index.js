@@ -1,7 +1,7 @@
 let logger = require('../utils/log')(module),
 	auth = require('./auth');
 
-module.exports = function (app, server, http) {
+module.exports = function (app, server) {
 	auth(app);
 	
 	app.get('/', (req, res) => {
@@ -34,7 +34,7 @@ module.exports = function (app, server, http) {
 	});
 
 	app.get('/schedule', (req, res) => {
-		let schedule = require('../models/schedule')(http, req.user, req.query);
+		let schedule = require('../models/schedule')(req.user, req.query);
 		res.render('schedule', { page: 'Schedule', user: req.user, schedule });
 	});
 };
