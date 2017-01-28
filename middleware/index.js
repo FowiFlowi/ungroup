@@ -54,7 +54,7 @@ module.exports = function (app, express, server) {
 		if (err.message.indexOf('not found'))
 			return next();
 		logger.error(err.stack);
-		res.status(500);
+		res.status(500).render('error500');
 	});
 
 	app.use((req, res, next) => {
