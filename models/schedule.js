@@ -1,43 +1,30 @@
-let logger = require('../utils/log'),
-	options = {
-		host: 'api.rozklad.hub.kpi.ua',
-		port: 80,
-		path: '',
-		method: 'GET'
-	};
+let logger = require('../utils/log')(module),
+	request = require('request'),
+	obj;
 
 module.exports = function(http, user, query) {
+	let url = 'https://api.rozklad.hub.kpi.ua';
+
 	if (query) {
-		if (query.groupNumber == 51)
-			options.path = '/groups/580/timetable/'
-		if (query.groupNumber == 52)
-			options.path = '/groups/583/timetable/'
-		if (query.groupNumber == 53)
-			options.path = '/groups/585/timetable/'
+		if (query.group == 51)
+			url += '/groups/580/timetable/';
+		if (query.group == 52)
+			url += '/groups/583/timetable/';
+		if (query.group == 53)
+			url += '/groups/585/timetable/';
 	} else {
-		if (user.groupNumber == 51)
-			options.path = '/groups/580/timetable/'
-		if (user.groupNumber == 52)
-			options.path = '/groups/583/timetable/'
-		if (user.groupNumber == 53)
-			options.path = '/groups/585/timetable/'
+		if (user.group == 51)
+			url += '/groups/580/timetable/';
+		if (user.group == 52)
+			url += '/groups/583/timetable/';
+		if (user.group == 53)
+			url += '/groups/585/timetable/';
 	};
 
-	function getScheduleJSON(options, cb) {
-		let req = http.request(options, (res) => {
-			let data = '';
-			res.setEncoding('utf8');
+	request(url, (err, res, body) => {
+		if (err) logger.error(err);
+		res.statusCode == 200 ? obj = JSON.parse(body) : logger.info('Fail: ' + res.statusCode);
+	});
 
-			res.on('data', (chunk) => data += chunk);
-			res.on('end', () => {
-				let obj = JSON.parse(data);
-				cb(obj);
-			})
-		});
-
-		req.on('error', (e) => { logger.error(e) });
-		req.end();
-	};
-
-	return {getScheduleJSON, options};
+	return obj;
 }

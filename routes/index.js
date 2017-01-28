@@ -17,7 +17,7 @@ module.exports = function (app, server, http) {
 			name;
 
 		req.query.group ? name = req.query.group : name = req.user.group
-
+		
 		studentList.findOne({ name }, (err, group) => {
 			err ? logger.error(err) 
 				: res.render('list', { page: 'List', user: req.user, group });
@@ -34,12 +34,7 @@ module.exports = function (app, server, http) {
 	});
 
 	app.get('/schedule', (req, res) => {
-		let scheduleModel = require('../models/schedule')(http, req.user, req.query),
-			options = scheduleModel.options,
-			getSchedule = scheduleModel.getScheduleJSON;
-
-		getSchedule(options, (schedule) => {
-			res.render('schedule', { page: 'Schedule', user: req.user, schedule });
-		});
+		let schedule = require('../models/schedule')(http, req.user, req.query);
+		res.render('schedule', { page: 'Schedule', user: req.user, schedule });
 	});
 };

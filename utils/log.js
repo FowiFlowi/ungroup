@@ -12,12 +12,12 @@ function getLogger (path) {
 				timestamp: true, 			// function() { return new Date().toString() }
 				level: 'debug'
 			}),
-			new winston.transports.File({
-				name: 'chatInfo',
-				filename: 'logs/app.log',
-				timestamp: true,
-				level: 'info'
-			}),
+			// new winston.transports.File({
+			// 	name: 'chatInfo',
+			// 	filename: 'logs/app.log',
+			// 	timestamp: true,
+			// 	level: 'info'
+			// }),
 			new winston.transports.Console({
 				timestamp: true,
 				colorize: true,
@@ -27,12 +27,12 @@ function getLogger (path) {
 		return new winston.Logger({ transports: transports });
 	} else {
 		let transports = [
-			new winston.transports.File({
-				name: 'serverLogs',
-				filename: 'logs/app.log',
-				timestamp: true,
-				level: 'debug'
-			}),
+			// new winston.transports.File({
+			// 	name: 'serverLogs',
+			// 	filename: 'logs/app.log',
+			// 	timestamp: true,
+			// 	level: 'debug'
+			// }),
 			new winston.transports.Console({
 				timestamp: true,
 				colorize: true,
