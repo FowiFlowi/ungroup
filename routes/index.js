@@ -37,6 +37,7 @@ module.exports = function (app, server) {
 		let getSchedule = require('../models/schedule')(req.user, req.query);
 
 		getSchedule((err, schedule) => {
+			console.log(schedule);
 			err ? logger.error(err) : res.render('schedule', { page: 'Schedule', user: req.user, schedule });
 		})
 	});
