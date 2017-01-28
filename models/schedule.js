@@ -22,6 +22,7 @@ module.exports = function(user, query) {
 	};
 
 	return function (cb) {
+		console.log(url);
 		request(url, (err, res, body) => {
 			if (err) return cb(err);
 			res.statusCode == 200 ? obj = JSON.parse(body) : logger.info('Fail: ' + res.statusCode);
