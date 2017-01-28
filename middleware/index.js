@@ -16,7 +16,7 @@ module.exports = function (app, express, server) {
 
 	app.set('views', path.join(__dirname,'..', 'views'))
 	app.set('view engine', 'jade');
-	
+
 	// Application-level middleware
 	app.use(favicon(__dirname + '/../public/images/favicon.ico'));	// Favicon
 	app.use((req, res, next) => {	// logging request
@@ -51,7 +51,7 @@ module.exports = function (app, express, server) {
 
 	// Error-handing middleware
 	app.use((err, req, res, next) => {
-		if (~err.message.indexOf('not found'))
+		if (err.message.indexOf('not found'))
 			return next();
 		logger.error(err.stack);
 		res.status(500);
