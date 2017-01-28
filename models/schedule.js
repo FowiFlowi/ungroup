@@ -13,11 +13,11 @@ module.exports = function(user, query) {
 		if (query.group == 53)
 			url += '/groups/585/timetable/';
 	} else {
-		if (user.group == 51)
+		if (user.group == 'КВ-51')
 			url += '/groups/580/timetable/';
-		if (user.group == 52)
+		if (user.group == 'КВ-52')
 			url += '/groups/583/timetable/';
-		if (user.group == 53)
+		if (user.group == 'КВ-53')
 			url += '/groups/585/timetable/';
 	};
 
