@@ -4,8 +4,8 @@ let logger = require('../utils/log')(module),
 
 module.exports = function(user, query) {
 	let url = 'https://api.rozklad.hub.kpi.ua';
-	console.log(user.group, query);
-	if (query) {
+
+	if (query.group) {
 		if (query.group == 51)
 			url += '/groups/580/timetable/';
 		if (query.group == 52)
@@ -13,10 +13,8 @@ module.exports = function(user, query) {
 		if (query.group == 53)
 			url += '/groups/585/timetable/';
 	} else {
-		if (user.group == 'КВ-51') {
-			console.log('wtf');
+		if (user.group == 'КВ-51')
 			url += '/groups/580/timetable/';
-		}
 		if (user.group == 'КВ-52')
 			url += '/groups/583/timetable/';
 		if (user.group == 'КВ-53')
@@ -24,11 +22,10 @@ module.exports = function(user, query) {
 	};
 
 	return function (cb) {
-		console.log(url);
 		request(url, (err, res, body) => {
 			if (err) return cb(err);
-			res.statusCode == 200 ? obj = JSON.parse(body) : logger.info('Fail: ' + res.statusCode);
-			return cb(null, obj);
+			res.statusCode == 200 ? obj = JSON.parse(body) : logger.info('Fail: ' + res.statusCode)
+			return cb(null, obj)
 		});
-	}
-}
+	};
+};
