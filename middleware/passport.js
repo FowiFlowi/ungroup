@@ -19,7 +19,7 @@ module.exports = function (session) {
 				return done(err);
 			}
 
-			if (!user && session.query) {
+			if (!user && session.query.nickname) {
 				let query = session.query,
 					userData = {
 						vkId: profile.id,
@@ -31,7 +31,7 @@ module.exports = function (session) {
 					};
 				user = new User(userData);
 				user.save((err) => {
-					err ? logger.error(err) : logger.info('AUTH: New user ' + profile.displayName + ' has auth');
+					err ? logger.error(err) : logger.info('AUTH: New user '+ profile.displayName +' has registered');
 					return done(err, user);
 				})
 			} else {
