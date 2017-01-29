@@ -37,9 +37,8 @@ module.exports = function (session) {
 				})
 			} else {
 				if (!session.query) {
-					let e = new Error('User is not registered');
-					logger.error(e);
-					return done(e);
+					logger.info('AUTH: User is not registered');
+					return done();
 				}
 
 				logger.info('AUTH: User ' + user.nickname + ' logged on');
