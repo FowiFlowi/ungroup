@@ -19,8 +19,8 @@ module.exports = function (session) {
 				return done(err);
 			}
 
-			if (!user && session.query.nickname) {
-				console.log(session.qury.nickname);
+			if (!user && session.query) {
+				console.log(session.qury);
 				let query = session.query,
 					userData = {
 						vkId: profile.id,
