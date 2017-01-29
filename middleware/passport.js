@@ -20,6 +20,7 @@ module.exports = function (session) {
 			}
 
 			if (!user && session.query.nickname) {
+				console.log(session.qury.nickname);
 				let query = session.query,
 					userData = {
 						vkId: profile.id,
