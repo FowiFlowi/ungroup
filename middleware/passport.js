@@ -18,7 +18,8 @@ module.exports = function (session) {
 				logger.error(err);
 				return done(err);
 			}
-			if (!user) {
+
+			if (!user && session.query) {
 				let query = session.query,
 					userData = {
 						vkId: profile.id,
@@ -30,13 +31,16 @@ module.exports = function (session) {
 					};
 				user = new User(userData);
 				user.save((err) => {
-					if (err) 
-						logger.error(err);
-					else 
-						logger.info('AUTH: New user ' + profile.displayName + ' has auth');
+					err ? logger.error(err) : logger.info('AUTH: New user ' + profile.displayName + ' has auth');
 					return done(err, user);
 				})
 			} else {
+				if (!session.query) {
+					let e = new Error('User is not registered');
+					logger.error(e);
+					return done(e);
+				}
+
 				logger.info('AUTH: User ' + user.nickname + ' logged on');
 				return done(err, user);
 			}
