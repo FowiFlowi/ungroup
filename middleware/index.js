@@ -16,10 +16,7 @@ module.exports = function (app, express, server) {
 
 	app.set('views', path.join(__dirname,'..', 'views'))
 	app.set('view engine', 'jade');
-	app.use((req, res, next) => {
-		req.user = { group: 'КВ-51' };
-		next();
-	})
+
 	// Application-level middleware
 	app.use(favicon(__dirname + '/../public/images/favicon.ico'));	// Favicon
 	app.use((req, res, next) => {	// logging request
