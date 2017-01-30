@@ -28,7 +28,7 @@ module.exports = function (session) {
 						username: profile.displayName,
 						photoUrl: profile.photos[0].value,
 						profileUrl: profile.profileUrl,
-						accessToken
+						accessToken: accessToken
 					};
 				user = new User(userData);
 				user.save((err) => {
