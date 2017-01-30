@@ -13,6 +13,7 @@ module.exports = function (session) {
 
 	}, (accessToken, refreshToken, profile, done) => {
 		console.log(profile);
+		console.log(accessToken);
 		User.findOne({ vkId: profile.id }, (err, user) => {
 			if (err) {
 				logger.error(err);
