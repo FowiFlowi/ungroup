@@ -14,7 +14,7 @@ module.exports = function (session) {
 
 	}, (accessToken, refreshToken, profile, done) => {
 
-		console.log(proile);
+		console.log(profile);
 		// VK.call('photos.get', {
 		// 	owner_id: profile.id,
 		// 	album_id: 'profile',
