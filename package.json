@@ -12,6 +12,7 @@
     "jade": "^1.11.0",
     "mongoose": "^4.7.5",
     "nconf": "^0.8.4",
+    "node-vkapi": "^2.1.0",
     "passport": "^0.3.2",
     "passport-vkontakte": "^0.3.2",
     "request": "^2.79.0",
