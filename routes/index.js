@@ -39,12 +39,11 @@ module.exports = function (app, server) {
 		).then(status => {
 			console.log(status);
 			personalData.status = status.text;
+
+			res.render('user', { page: req.user.nickname, user: req.user, personalData });
 		}).catch(err => {
 			logger.error(err);
 		});
-		console.log(personalData);
-
-		res.render('user', { page: req.user.nickname, user: req.user, personalData });
 	});
 
 	app.get('/list', (req, res) => {
