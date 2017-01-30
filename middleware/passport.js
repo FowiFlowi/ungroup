@@ -12,7 +12,7 @@ module.exports = function (session) {
 		callbackURL: config.get('app:url') + '/auth/vk/callback'
 
 	}, (accessToken, refreshToken, profile, done) => {
-
+		console.log(profile);
 		User.findOne({ vkId: profile.id }, (err, user) => {
 			if (err) {
 				logger.error(err);
