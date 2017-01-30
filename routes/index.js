@@ -21,7 +21,7 @@ module.exports = function (app, server) {
 	app.get('/user', (req, res) => {
 		let user = req.user,
 			personalData = {};
-
+		console.log('Access: ', user.accessToken);
 		VK.call('photos.get', {
 			owner_id: user.vkId,
 			album_id: 'profile',
