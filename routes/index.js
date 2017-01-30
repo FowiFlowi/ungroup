@@ -29,7 +29,7 @@ module.exports = function (app, server) {
 		}).then(profilePhotos => {
 			let len = profilePhotos.items.length,
 				photo = profilePhotos.items[len - 1].photo_604;
-			console.log(photo);
+
 			personalData.photo = photo;
 			return;
 		}).then(() => VK.call('status.get', {
@@ -37,7 +37,6 @@ module.exports = function (app, server) {
 				access_token: user.accessToken
 			})
 		).then(status => {
-			console.log(status);
 			personalData.status = status.text;
 
 			res.render('user', { page: req.user.nickname, user: req.user, personalData });
