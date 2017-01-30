@@ -6,7 +6,7 @@ module.exports = function (app) {
 		res.redirect('/home');
 	});
 
-	app.get('/auth/vk', passport.authenticate('vk', { scope: ['frineds'] }), (req, res) => {  });
+	app.get('/auth/vk', passport.authenticate('vk', { scope: ['frineds', 'status'] }), (req, res) => {  });
 
 	app.get('/auth/vk/callback', passport.authenticate('vk', { failureRedirect: '/home' }), (req, res) => {
 		res.redirect('/home');

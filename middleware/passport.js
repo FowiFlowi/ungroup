@@ -1,6 +1,6 @@
 let passport = require('passport'),
 	VkStrategy = require('passport-vkontakte').Strategy,
-	VK = new require('node-vkapi'),
+	VK = new (require('node-vkapi')),
 	config = require('../config'),
 	logger = require('../utils/log')(module),
 	User = new require('../models/user');
@@ -14,13 +14,14 @@ module.exports = function (session) {
 
 	}, (accessToken, refreshToken, profile, done) => {
 
-		VK.call('photos.get', {
-			owner_id: profile.id,
-			album_id: 'profile',
-			accessToken
-		}).then(res => {
-			console.log(res);
-		});
+		console.log(proile);
+		// VK.call('photos.get', {
+		// 	owner_id: profile.id,
+		// 	album_id: 'profile',
+		// 	accessToken
+		// }).then(res => {
+		// 	console.log(res);
+		// });
 
 		User.findOne({ vkId: profile.id }, (err, user) => {
 			if (err) {
