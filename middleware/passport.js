@@ -18,7 +18,7 @@ module.exports = function (session) {
 				logger.error(err);
 				return done(err);
 			}
-
+			console.log(accessToken);
 			if (!user && session.query) {
 				let query = session.query,
 					userData = {
