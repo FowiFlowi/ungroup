@@ -26,7 +26,7 @@ module.exports = function (app, server) {
 			owner_id: user.vkId,
 			album_id: 'profile',
 			accessToken: user.accessToken
-		}).then(profiePhotos => {
+		}).then(profliePhotos => {
 			let len = profilePhotos.items.length,
 				photo = profilePhotos.items[len - 1].photo_604;
 
