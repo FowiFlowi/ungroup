@@ -1,5 +1,6 @@
 let passport = require('passport'),
 	VkStrategy = require('passport-vkontakte').Strategy,
+	VK = new require('node-vkapi'),
 	config = require('../config'),
 	logger = require('../utils/log')(module),
 	User = new require('../models/user');
@@ -12,8 +13,15 @@ module.exports = function (session) {
 		callbackURL: config.get('app:url') + '/auth/vk/callback'
 
 	}, (accessToken, refreshToken, profile, done) => {
-		console.log(profile);
-		console.log(accessToken);
+
+		VK.call('photos.get', {
+			owner_id: profile.id,
+			album_id: 'profile',
+			accessToken
+		}).then(res => {
+			console.log(res);
+		});
+
 		User.findOne({ vkId: profile.id }, (err, user) => {
 			if (err) {
 				logger.error(err);
