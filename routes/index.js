@@ -1,5 +1,6 @@
 let logger = require('../utils/log')(module),
-	auth = require('./auth');
+	auth = require('./auth'),
+	VK = new (require('node-vkapi'));
 
 module.exports = function (app, server) {
 	auth(app);
@@ -18,7 +19,32 @@ module.exports = function (app, server) {
 	});
 
 	app.get('/user', (req, res) => {
-		res.render('user', { page: req.user.nickname, user: req.user })
+		let user = req.user,
+			personalData = {};
+
+		VK.call('photos.get', {
+			owner_id: user.vkId,
+			album_id: 'profile',
+			accessToken: user.accessToken
+		}).then(profiePhotos => {
+			let len = profilePhotos.items.length,
+				photo = profilePhotos.items[len - 1].photo_604;
+
+			return photo;
+		}).then(photo => {
+			personalData.photo = photo;
+
+			return VK.call('status.get', {
+				user_id: user.vkId
+			})
+		}).then(status => {
+			personalData.status = status.text;
+		}).catch(err => {
+			logger.error(err);
+		});
+		console.log(personalData);
+
+		res.render('user', { page: req.user.nickname, user: req.user, personalData });
 	});
 
 	app.get('/list', (req, res) => {
