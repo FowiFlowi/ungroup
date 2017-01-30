@@ -21,7 +21,7 @@ module.exports = function (app, server) {
 	app.get('/user', (req, res) => {
 		let user = req.user,
 			personalData = {};
-		console.log('Access: ', user.accessToken);
+		
 		VK.call('photos.get', {
 			owner_id: user.vkId,
 			album_id: 'profile',
@@ -29,7 +29,7 @@ module.exports = function (app, server) {
 		}).then(profilePhotos => {
 			let len = profilePhotos.items.length,
 				photo = profilePhotos.items[len - 1].photo_604;
-
+			console.log(photo);
 			personalData.photo = photo;
 			return;
 		}).then(() => VK.call('status.get', {
@@ -37,6 +37,7 @@ module.exports = function (app, server) {
 				access_token: user.accessToken
 			})
 		).then(status => {
+			console.log(status);
 			personalData.status = status.text;
 		}).catch(err => {
 			logger.error(err);
