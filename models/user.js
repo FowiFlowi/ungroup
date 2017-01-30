@@ -10,7 +10,8 @@ let mongoose = require('../utils/mongoose'),
 		username: String,
 		group: String,
 		photoUrl: String,
-		profileUrl: String
+		profileUrl: String,
+		accessToken: String
 	}),
 	UserModel = mongoose.model('User', User);
 
