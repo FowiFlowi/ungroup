@@ -22,10 +22,9 @@ module.exports = function (session) {
 			let query = session.query;
 
 			if (!user && query) {
-
-				studentList.findOne({ name:  query.name}, (err, group) => { // check list
+				studentList.findOne({ name:  query.group}, (err, group) => { // check list
 					if (err) logger.error(err);
-					console.log(group);
+					
 					let list = group.list,
 						flag = false;
 
