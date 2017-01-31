@@ -26,14 +26,19 @@ module.exports = function (session) {
 					if (err) logger.error(err);
 
 					let list = group.list,
-						flag = false;
+						flag = false,
+						idRegExp = new RegExp('profile.id');
 
 					for (let i = 0; i < list.length; i++) {
-						console.log(list[i]);
-						if (list[i].vkRef == profile.id) {
+						if (list[i].vkRef.match(idRegExp)) {
 							flag = true;
 							break;
 						}
+						// let id = list[i].vkRef
+						// if (list[i].vkRef. == profile.id) {
+						// 	flag = true;
+						// 	break;
+						// }
 					}
 					if (!flag) {
 						logger.info('AUTH: User ' + profile.displayName + ' is not located in group ' + query.group);
