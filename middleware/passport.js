@@ -28,11 +28,13 @@ module.exports = function (session) {
 					let list = group.list,
 						flag = false;
 
-					for (let i = 0; i < list.length; i++)
+					for (let i = 0; i < list.length; i++) {
+						console.log(list[i]);
 						if (list[i].vkRef == profile.id) {
 							flag = true;
 							break;
 						}
+					}
 					if (!flag) {
 						logger.info('AUTH: User ' + profile.displayName + ' is not located in group ' + query.group);
 						return done();
@@ -49,13 +51,11 @@ module.exports = function (session) {
 					};
 					user = new User(userData);
 					user.save(err => {
-						err ? logger.error(err) : logger.info('AUTH: New user '+profile.displayName+' has registered');
+						err ? logger.error(err) 
+							: logger.info('AUTH: New user ' + profile.displayName + ' has registered from ' + query.group);
 						return done(err, user);
 					})
 				});
-
-
-
 			} else {
 				if (!query) {
 					logger.info('AUTH: User ' + profile.displayName + ' is not registered');
