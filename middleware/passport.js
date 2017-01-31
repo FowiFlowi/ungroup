@@ -24,17 +24,17 @@ module.exports = function (session) {
 			if (!user && query) {
 				studentList.findOne({ name:  query.group}, (err, group) => { // check list
 					if (err) logger.error(err);
-					
+
 					let list = group.list,
 						flag = false;
 
 					for (let i = 0; i < list.length; i++)
-						if (list[i] == profile.id) {
+						if (list[i].vkRef == profile.id) {
 							flag = true;
 							break;
 						}
 					if (!flag) {
-						logger.info('AUTH: User ' + profile.displayName + ' is not locate in group ' + query.group);
+						logger.info('AUTH: User ' + profile.displayName + ' is not located in group ' + query.group);
 						return done();
 					};
 
