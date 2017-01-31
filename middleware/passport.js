@@ -21,23 +21,24 @@ module.exports = function (session) {
 			};
 			let query = session.query;
 
-			StudentList.findOne({ name:  query.name}, (err, group) => { // check list
-				let list = group.list,
-					flag = false;
+			if (!user && query) {
 
-				for (let i = 0; i < list.length; i++)
-					if (list[i] == profile.id) {
-						flag = true;
-						break;
+				StudentList.findOne({ name:  query.name}, (err, group) => { // check list
+					let list = group.list,
+						flag = false;
+
+					for (let i = 0; i < list.length; i++)
+						if (list[i] == profile.id) {
+							flag = true;
+							break;
+						}
+
+					if (!flag) {
+						logger.info('AUTH: User ' + profile.displayName + ' is not locate in group ' + query.group);
+						return done();
 					}
+				});
 
-				if (!flag) {
-					logger.info('AUTH: User ' + profile.displayName + ' is not locate in group ' + query.group);
-					done();
-				}
-			})
-
-			if (!user && session.query) {
 				let userData = {
 						vkId: profile.id,
 						nickname: query.nickname,
@@ -52,8 +53,9 @@ module.exports = function (session) {
 					err ? logger.error(err) : logger.info('AUTH: New user '+profile.displayName+' has registered');
 					return done(err, user);
 				})
+
 			} else {
-				if (!session.query) {
+				if (!query) {
 					logger.info('AUTH: User ' + profile.displayName + ' is not registered');
 					return done();
 				}
