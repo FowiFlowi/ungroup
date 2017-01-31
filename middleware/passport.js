@@ -24,6 +24,8 @@ module.exports = function (session) {
 			if (!user && query) {
 
 				StudentList.findOne({ name:  query.name}, (err, group) => { // check list
+					if (err) logger.error(err);
+					console.log(group);
 					let list = group.list,
 						flag = false;
 
