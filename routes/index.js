@@ -31,7 +31,7 @@ module.exports = function (app, server) {
 				photo = profilePhotos.items[len - 1].photo_604;
 
 			personalData.photo = photo;
-		}).then(() => VK.call('status.get', {
+		}).then(VK.call('status.get', {
 				user_id: user.vkId, 
 				access_token: user.accessToken
 			})

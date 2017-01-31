@@ -31,8 +31,8 @@ module.exports = function (session) {
 						accessToken: accessToken
 					};
 				user = new User(userData);
-				user.save((err) => {
-					err ? logger.error(err) : logger.info('AUTH: New user '+ profile.displayName +' has registered');
+				user.save(err => {
+					err ? logger.error(err) : logger.info('AUTH: New user '+profile.displayName+' has registered');
 					return done(err, user);
 				})
 			} else {
