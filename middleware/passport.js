@@ -3,7 +3,7 @@ let passport = require('passport'),
 	config = require('../config'),
 	logger = require('../utils/log')(module),
 	User = new require('../models/user'),
-	studentList = require('../models/studentList');
+	studentList = new require('../models/studentList');
 
 module.exports = function (session) {
 	passport.use('vk', new VkStrategy({
@@ -34,14 +34,12 @@ module.exports = function (session) {
 							flag = true;
 							break;
 						}
-
 					if (!flag) {
 						logger.info('AUTH: User ' + profile.displayName + ' is not locate in group ' + query.group);
 						return done();
-					}
-				});
+					};
 
-				let userData = {
+					let userData = {
 						vkId: profile.id,
 						nickname: query.nickname,
 						group: query.group,
@@ -50,11 +48,14 @@ module.exports = function (session) {
 						profileUrl: profile.profileUrl,
 						accessToken: accessToken
 					};
-				user = new User(userData);
-				user.save(err => {
-					err ? logger.error(err) : logger.info('AUTH: New user '+profile.displayName+' has registered');
-					return done(err, user);
-				})
+					user = new User(userData);
+					user.save(err => {
+						err ? logger.error(err) : logger.info('AUTH: New user '+profile.displayName+' has registered');
+						return done(err, user);
+					})
+				});
+
+
 
 			} else {
 				if (!query) {
