@@ -3,7 +3,7 @@ let passport = require('passport'),
 	config = require('../config'),
 	logger = require('../utils/log')(module),
 	User = new require('../models/user'),
-	StudentList = require('../models/StudentList');
+	StudentList = require('../models/studentList');
 
 module.exports = function (session) {
 	passport.use('vk', new VkStrategy({
