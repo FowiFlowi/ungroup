@@ -27,7 +27,7 @@ module.exports = function (session) {
 
 					let list = group.list,
 						flag = false,
-						idRegExp = new RegExp('profile.id');
+						idRegExp = new RegExp(profile.id);
 
 					for (let i = 0; i < list.length; i++) {
 						if (list[i].vkRef.match(idRegExp)) {
