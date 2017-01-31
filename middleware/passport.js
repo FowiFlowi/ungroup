@@ -3,7 +3,7 @@ let passport = require('passport'),
 	config = require('../config'),
 	logger = require('../utils/log')(module),
 	User = new require('../models/user'),
-	StudentList = require('../models/studentList');
+	studentList = require('../models/studentList');
 
 module.exports = function (session) {
 	passport.use('vk', new VkStrategy({
@@ -23,7 +23,7 @@ module.exports = function (session) {
 
 			if (!user && query) {
 
-				StudentList.findOne({ name:  query.name}, (err, group) => { // check list
+				studentList.findOne({ name:  query.name}, (err, group) => { // check list
 					if (err) logger.error(err);
 					console.log(group);
 					let list = group.list,

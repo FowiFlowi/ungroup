@@ -48,6 +48,7 @@ module.exports = function (app, server) {
 		req.query.group ? name = req.query.group : name = req.user.group
 		
 		studentList.findOne({ name }, (err, group) => {
+			console.log(group);
 			err ? logger.error(err) 
 				: res.render('list', { page: 'List', user: req.user, group });
 		});
