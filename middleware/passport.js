@@ -2,7 +2,8 @@ let passport = require('passport'),
 	VkStrategy = require('passport-vkontakte').Strategy,
 	config = require('../config'),
 	logger = require('../utils/log')(module),
-	User = new require('../models/user');
+	User = new require('../models/user'),
+	StudentList = require('../models/StudentList');
 
 module.exports = function (session) {
 	passport.use('vk', new VkStrategy({
@@ -17,11 +18,27 @@ module.exports = function (session) {
 			if (err) {
 				logger.error(err);
 				return done(err);
-			}
+			};
+			let query = session.query;
+
+			StudentList.findOne({ name:  query.name}, (err, group) => { // check list
+				let list = group.list,
+					flag = false;
+
+				for (let i = 0; i < list.length; i++)
+					if (list[i] == profile.id) {
+						flag = true;
+						break;
+					}
+
+				if (!flag) {
+					logger.info('AUTH: User ' + profile.displayName + ' is not locate in group ' + query.group);
+					done();
+				}
+			})
 
 			if (!user && session.query) {
-				let query = session.query,
-					userData = {
+				let userData = {
 						vkId: profile.id,
 						nickname: query.nickname,
 						group: query.group,
@@ -37,7 +54,7 @@ module.exports = function (session) {
 				})
 			} else {
 				if (!session.query) {
-					logger.info('AUTH: User is not registered');
+					logger.info('AUTH: User ' + profile.displayName + ' is not registered');
 					return done();
 				}
 
