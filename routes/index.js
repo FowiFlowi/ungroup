@@ -33,9 +33,9 @@ module.exports = function (app, server) {
 				access_token: user.accessToken				
 			})
 		]).then(results => {
-			let len = results[0].items.length,
-				personalData.photo = profilePhotos.items[len - 1].photo_604,
-				personalData.status = results[1].text;
+			let len = results[0].items.length;
+			personalData.photo = profilePhotos.items[len - 1].photo_604;
+			personalData.status = results[1].text;
 
 			res.render('user', { page: req.user.nickname, user: req.user, personalData });
 		}).catch(err => {
