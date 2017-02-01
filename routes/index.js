@@ -34,7 +34,7 @@ module.exports = function (app, server) {
 			})
 		]).then(results => {
 			let len = results[0].items.length;
-			personalData.photo = profilePhotos.items[len - 1].photo_604;
+			personalData.photo = results[0].items[len - 1].photo_604;
 			personalData.status = results[1].text;
 
 			res.render('user', { page: req.user.nickname, user: req.user, personalData });
