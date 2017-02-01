@@ -22,23 +22,43 @@ module.exports = function (app, server) {
 		let user = req.user,
 			personalData = {};
 		
-		VK.call('photos.get', {
-			owner_id: user.vkId,
-			album_id: 'profile',
-			access_token: user.accessToken
-		}).then(profilePhotos => {
-			let len = profilePhotos.items.length,
-				pesonalDataphoto = profilePhotos.items[len - 1].photo_604;
-		}).then(() => VK.call('status.get', {
-				user_id: user.vkId, 
+		Promise.all([
+			VK.call('photos.get', {
+				owner_id: user.vkId,
+				album_id: 'profile',
 				access_token: user.accessToken
+			}),
+			VK.call('status.get', {
+				user_id: user.vkId, 
+				access_token: user.accessToken				
 			})
-		).then(status => {
-			personalData.status = status.text;
+		]).then(results => {
+			let len = results[0].items.length,
+				pesonalData.photo = profilePhotos.items[len - 1].photo_604,
+				personalData.status = results[1].text;
+
 			res.render('user', { page: req.user.nickname, user: req.user, personalData });
 		}).catch(err => {
 			logger.error(err);
 		});
+
+		// VK.call('photos.get', {
+		// 	owner_id: user.vkId,
+		// 	album_id: 'profile',
+		// 	access_token: user.accessToken
+		// }).then(profilePhotos => {
+		// 	let len = profilePhotos.items.length,
+		// 		pesonalDataphoto = profilePhotos.items[len - 1].photo_604;
+		// }).then(() => VK.call('status.get', {
+		// 		user_id: user.vkId, 
+		// 		access_token: user.accessToken
+		// 	})
+		// ).then(status => {
+		// 	personalData.status = status.text;
+		// 	res.render('user', { page: req.user.nickname, user: req.user, personalData });
+		// }).catch(err => {
+		// 	logger.error(err);
+		// });
 	});
 
 	app.get('/list', (req, res) => {
